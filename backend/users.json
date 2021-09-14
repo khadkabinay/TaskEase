@@ -1,0 +1,22 @@
+{
+    "users": [
+        {
+            "name": "Binay",
+            "username":"binu",
+            "email": "binu@yahoo.com",
+            "image": "https://cdn.pixabay.com/photo/2020/03/01/00/55/adventure-4891499_960_720.jpg",
+            "password":"binu123",
+            "phoneNumber": 1312242,
+            "role" : "Admin"
+        },
+        {
+            "name":"sonu",
+            "username":"sonu",
+            "email":"sonu@yahoo.com",
+            "image":"https://cdn.pixabay.com/photo/2016/12/11/12/42/canada-1899328__340.jpg",
+            "password":"sonu123",
+            "phoneNumber": 242422234,
+            "role":"user"
+        }
+    ]
+  }

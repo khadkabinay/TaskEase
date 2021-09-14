@@ -1,0 +1,11 @@
+.FooterBar{
+    background-color: #201515;
+    opacity: 0.8;
+    height: 30vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+  
+}

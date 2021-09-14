@@ -1,0 +1,26 @@
+.RegisterCard { 
+    position: absolute;
+    min-width: 250px;
+    left: 30%;
+    top: 70px;
+    background-color: #e8e8e8;
+    padding: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 20px 30px 0 #7e7878;
+    
+    
+}
+
+.RegisterBtn{
+    background-color: #7fc579;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+
+}
+
+.RegisterBtn:hover{
+    background-color:green; 
+}

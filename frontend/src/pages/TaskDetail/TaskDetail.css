@@ -1,0 +1,17 @@
+/* TaskDetail styles */
+
+.task-detail-box{
+    background-color: bisque;
+    border-radius: 30px ;
+
+}
+
+.task-detail-bg{
+    background-color: yellowgreen;
+    border-radius: 50px;;
+}
+
+
+.one-task{
+    font-family: 'Courgette', cursive;
+}

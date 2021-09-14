@@ -1,0 +1,60 @@
+
+.check-task { 
+    background-color: aquamarine;
+    text-decoration: line-through;
+    
+}
+
+.blue{
+    color: "blue";
+}
+
+.red {
+    color: "red";
+}
+
+
+.task-box{
+   background-color: #f0f5f6;
+}
+
+
+.edit-button{
+    padding: 5px 20px;
+    background-color: rgb(182, 173, 190);
+    color: white;
+    border-radius: 10px;
+    margin:10px 20px;
+}
+.edit-button:hover{
+    background-color: rgb(226, 218, 233);
+
+}
+
+.delete-button{
+    padding: 5px 20px;
+    background-color: #ff7171;
+    color: white;
+    border-radius: 10px;
+
+}
+
+.delete-button:hover{
+    background-color: #f10404;
+}
+
+.task-name{
+    padding: 20px;
+    background-color:  #e1e9eb;
+    border-radius: 30px;
+    font-weight: bold;
+    box-shadow: 0 3px 4px 0 #bdc2c4;
+
+}
+
+.task-name:hover{
+    background-color:  #e1e9eb;
+    box-shadow: 2px 0px 1px 0px #bdc2c4;
+    
+}
+

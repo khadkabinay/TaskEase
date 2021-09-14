@@ -1,0 +1,28 @@
+
+.task-edit-form{
+    position: absolute;
+    padding: 10px;
+    top: 18%;
+    left: 40%;
+    min-width: 300px;
+    min-height: 200px;
+    background-color: #c7834c;
+    border-radius: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+}
+
+.task-edit-btn{
+background-color: #1f3c88;
+border-radius: 10px;
+padding: 5px 20px;
+}
+
+.task-edit-btn:hover{
+    background-color: #f57208;
+    
+}
+
+i{
+    font-size: 25px;
+}

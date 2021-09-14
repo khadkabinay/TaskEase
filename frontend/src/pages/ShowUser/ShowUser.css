@@ -1,0 +1,20 @@
+
+/* UserShow page style */
+
+.user-show{ 
+    background-image: linear-gradient(to top right, #5c93a3, #c8cde6);
+    justify-content: center;
+
+}
+
+.task-list-title{
+    padding: 20px;
+    margin-bottom:20px;
+    background-color: #b8de6f;
+    border-radius: 30px 30px 5px 5px;
+    box-shadow: 0 5px 10px 0 #8db596;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+
+

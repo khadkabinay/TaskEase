@@ -1,18 +1,14 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import TaskModel from "../../models/TaskModel";
+import "./Task.css";
 
-import React from 'react';
-import {Link} from 'react-router-dom'
-import TaskModel from '../../models/TaskModel'
-import './Task.css'
+const Task = (props) => {
+  const { name, user, isCompleted, date, _id } = props.task;
 
-
-  const Task = (props)=> {
-    const {name,user,isCompleted, date, _id } = props.task
-
-   
-      
-    return (
-      <div>
-         <div className="card mb-2 task-box">
+  return (
+    <>
+      {/* <div className="card mb-2 task-box">
             <div className='card-body' >
                  <h5 className="task-name" style={{background:isCompleted ? "green": "none"}}>{name} </h5>
                   <p>Due date:&nbsp;{date}</p> 
@@ -26,14 +22,9 @@ import './Task.css'
 
             </div>
 
-         </div>
-      
-      </div>
-    );
-    
-    
-  }
-  
-  
-  
-  export default Task;
+         </div> */}
+    </>
+  );
+};
+
+export default Task;

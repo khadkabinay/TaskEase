@@ -9,12 +9,14 @@ import "./Header.css";
 const Header = (props) => {
   const [user, setUser] = useRecoilState(userState);
 
+  //Provides consistancy for the user's authentication
   useEffect(function () {
     if (localStorage.getItem("uid")) {
       UserModel.all().then((response) => {
         setUser(response.data);
       });
     }
+    //eslint-disable-next-line
   }, []);
 
   function logOut() {

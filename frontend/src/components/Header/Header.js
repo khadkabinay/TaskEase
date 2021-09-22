@@ -1,10 +1,11 @@
 import React from "react";
 import { useEffect } from "react";
+import cn from "classnames";
 import { NavLink } from "react-router-dom";
 import UserModel from "../../models/UserModel";
 import { useRecoilState } from "recoil";
 import { userState } from "../../recoil/atoms";
-import "./Header.css";
+import classes from "./Header.module.css";
 
 const Header = (props) => {
   const [user, setUser] = useRecoilState(userState);
@@ -31,7 +32,7 @@ const Header = (props) => {
           <div>
             {user.role === "admin" ? (
               <div>
-                <ul className="header">
+                <ul className={cn(classes.Header, classes.HeaderLi)}>
                   <li>
                     <NavLink to="/users">Admin</NavLink>
                   </li>
@@ -44,7 +45,7 @@ const Header = (props) => {
               </div>
             ) : (
               <div>
-                <ul className="header">
+                <ul className={cn(classes.Header, classes.HeaderLi)}>
                   <li>
                     <NavLink to={`/users/${user._id}`}>Employee</NavLink>
                   </li>
@@ -59,7 +60,7 @@ const Header = (props) => {
           </div>
         ) : (
           <div>
-            <ul className="header">
+            <ul className={cn(classes.Header, classes.HeaderLi)}>
               <li>
                 <NavLink to="/">Home</NavLink>
               </li>

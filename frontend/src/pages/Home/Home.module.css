@@ -1,24 +1,19 @@
 /* HOME PAGE STYLE */
 
-.TaskTitle{
-    background-color: rgba(154, 212, 61 ,0.6);
-    padding: 30px;
-    color: #203535;
-    width: 100%;
-    font-size: 3em;
-    border-radius: 5px;
-    border: 0.4px solid burlywood;
-    box-shadow: 4px 10px 10px 0px rgba(154, 212, 61 ,0.2);
-    
-    
+.TaskTitle {
+  background-color: rgba(154, 212, 61, 0.6);
+  padding: 30px;
+  width: 100%;
+  color: red;
+  font-size: 3em;
+  border-radius: 5px;
+  box-shadow: 4px 10px 10px 0px rgba(154, 212, 61, 0.2);
 }
 
-.HomePage{
-    background-image: url('../assets/taskmg.jpg');
-    height: 90vh;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+.HomePage {
+  background-image: url("../../Assets/taskmg.jpg");
+  height: 90vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
-
-

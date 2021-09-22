@@ -1,61 +1,52 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
-import UserModel from '../../models/UserModel'
-import TaskModel from '../../models/TaskModel'
-import User from '../../components/User/User'
-import TaskList from '../../components/Tasks/TaskList';
-import NewTask from '../../components/NewTask/NewTask';
-import TaskDetail from '../TaskDetail/TaskDetail'
-import Task from '../../components/Tasks/Task'
-import './ShowUser.css'
+import React from "react";
+import { Link } from "react-router-dom";
+import UserModel from "../../models/UserModel";
+import TaskModel from "../../models/TaskModel";
+import User from "../../components/User/User";
+import TaskList from "../../components/Tasks/TaskList";
+import NewTask from "../../components/NewTask/NewTask";
+import TaskDetail from "../TaskDetail/TaskDetail";
+import Task from "../../components/Tasks/Task";
 
+const ShowUser = (props) => {
+  //     state ={
+  //         user: [],
+  //         tasks: []
+  //     }
 
+  //     componentDidMount() {
+  //         this.fetchTasks()
+  //         this.fetchUser()
 
-const  ShowUser  =(props) =>  {
+  // }
 
-//     state ={
-//         user: [],
-//         tasks: []
-//     }
+  // fetchTasks = () =>{
+  //     TaskModel.all()
+  //     .then(json => {
+  //         this.setState({
+  //             tasks: json.tasks
+  //         })
+  //     })
 
-//     componentDidMount() {
-//         this.fetchTasks()
-//         this.fetchUser()
+  // }
 
-// }
+  // fetchUser = () => {
+  //     UserModel.show(this.props.match.params.id).then((data) => {
+  //         this.setState({
+  //             user: data.user
+  //         })
+  //     })}
 
+  //     displayOneTask = (tasks, user) => {
+  //         return user.tasks.map( (task , idx) => {
+  //             return <TaskDetail  task={task}  key={idx}  />
 
-// fetchTasks = () =>{
-//     TaskModel.all()
-//     .then(json => {
-//         this.setState({
-//             tasks: json.tasks
-//         })
-//     })
+  //         })
+  //     }
 
-// }
-
-// fetchUser = () => {
-//     UserModel.show(this.props.match.params.id).then((data) => {
-//         this.setState({
-//             user: data.user
-//         })
-//     })}
-
-
-//     displayOneTask = (tasks, user) => {
-//         return user.tasks.map( (task , idx) => {
-//             return <TaskDetail  task={task}  key={idx}  />
-            
-//         })
-//     }
-
-   
-
-
-        return (
-        <div >
-        {/* // <div className="container" className="user-show">
+  return (
+    <div>
+      {/* // <div className="container" className="user-show">
         //         <div className="row p-2">
         //             <User user={this.state.user}/>
         //             <div className="col-9">
@@ -70,20 +61,9 @@ const  ShowUser  =(props) =>  {
         //         </div> 
         //     </div> */}
 
-            <div>{props.data.name}</div>
-        </div>
-        );
-
-    }
-
-
-    
-        
-
-    
-
-
-
+      <div>{props.data.name}</div>
+    </div>
+  );
+};
 
 export default ShowUser;
-

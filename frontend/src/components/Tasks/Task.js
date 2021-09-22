@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import TaskModel from "../../models/TaskModel";
-import "./Task.css";
 
 const Task = (props) => {
   const { name, user, isCompleted, date, _id } = props.task;

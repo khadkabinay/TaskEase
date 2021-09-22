@@ -8,7 +8,6 @@ const Home = () => {
   return (
     <>
       <div className={classes.HomePage}>
-        {/* <h1 className={`fas fa-tasks ${classes.TaskTitle}`}> */}
         <h1
           className={cn(
             classes.TaskTitle,

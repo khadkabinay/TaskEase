@@ -10,7 +10,6 @@
 }
 
 .BackPhoto {
-  background-image: url("../src/Assets/newtaskpic.jpg");
   height: 90vh;
   background-position: center;
   background-size: cover;

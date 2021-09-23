@@ -1,0 +1,14 @@
+/* USERLIST STYLES */
+
+.AllUsers {
+  background-color: rosybrown;
+}
+
+.SubContainer {
+  justify-self: center;
+  margin-bottom: 4px;
+}
+
+.UserContainer {
+  position: relative;
+}

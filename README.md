@@ -10,9 +10,9 @@
 2. Admin can delete and edit a task
 3. Admin can see all complete and incomplete tasks on dashboard.
 4. Top 3 employees are visually displayed on Admin dashboard.
-5. Admin can edit and delete own profile.
-6. Employee can assign a task to admin ( minimum and out products)
-7. Employee can not edit and delete a task
+5. Admin can edit and delete own and employee's profile.
+6. Employee can assign a task to admin (low and out of stock of products)
+7. Employee can edit but delete a task
 8. Employee can not see Admin dashboard
 9. Employee can edit own profile
 10. Login and signup

@@ -1,99 +1,36 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import UserModel from "../../models/UserModel";
 import TaskModel from "../../models/TaskModel";
-import User from "../../components/User/User";
-import TaskList from "../../components/Tasks/TaskList";
-import NewTask from "../../components/NewTask/NewTask";
-import ProgressBar from "../../components/ProgressBar/ProgressBar";
 import classes from "./UsersScreen.module.css";
+import cn from "classnames";
 
-class UsersScreen extends React.Component {
-  state = {
-    users: [],
-    tasks: [],
-  };
+const UsersScreen = () => {
+  const [users, setUsers] = useState([]);
+  const [tasks, setTasks] = useState([]);
 
-  componentDidMount() {
-    this.fetchTasks();
-    this.fetchUsers();
-  }
-
-  fetchTasks = () => {
-    TaskModel.all().then((json) => {
-      this.setState({
-        tasks: json.tasks,
-      });
-    });
-  };
-
-  fetchUsers = () => {
+  useEffect(() => {
     UserModel.all().then((data) => {
-      this.setState({
-        users: data.users,
-      });
+      setUsers(data.users);
     });
-  };
+  }, [users]);
 
-  deleteUser = (id, task) => {
-    UserModel.destroy(id, task).then((json) => {
-      this.fetchUsers();
-      this.fetchTasks();
+  useEffect(() => {
+    TaskModel.all().then((json) => {
+      setTasks(json.tasks);
     });
-  };
+  }, [tasks]);
 
-  handleDetail = (userDetail) => {
-    this.setState({
-      showUserDetail: !this.state.showUserDetail,
-    });
-  };
-
-  displayUser = (userData) => {
-    return userData.map((user) => {
-      return (
-        <User
-          user={user}
-          key={user._id}
-          deleteUser={this.deleteUser}
-          handleUser={() => this.handleDetail(this.state.showUserDetail)}
-          showUserDetail={this.state.showUserDetail}
-        />
-      );
-    });
-  };
-
-  displayProgressBar = (users) => {
+  const displayAllUsers = (users) => {
     return users.map((user) => {
       return (
-        <ProgressBar
-          userProgress={user}
-          key={user._id}
-          tasks={this.state.tasks}
-        />
+        <>
+          <h1 className={cn(classes.SubContainer)}>{user.name}</h1>
+        </>
       );
     });
   };
 
-  render() {
-    return (
-      <div className={classes.AllUser}>
-        <div>
-          {/* <div className={classes.SubContainer}><NewTask  history={this.props.history} fetchTasks={this.fetchTasks} fetchUsers={this.fetchUsers}/></div> */}
-          <div className={classes.SubContainer}>
-            {this.displayProgressBar(this.state.users)}
-          </div>
-          <div
-            className={classes.SubContainer}
-            className={classes.UserContainer}
-          >
-            {this.displayUser(this.state.users)}
-          </div>
-          <div className={classes.SubContainer}>
-            <TaskList tasks={this.state.tasks} fetchTasks={this.fetchTasks} />
-          </div>
-        </div>
-      </div>
-    );
-  }
-}
+  return <div className={classes.AllUsers}>{displayAllUsers(users)}</div>;
+};
 
 export default UsersScreen;

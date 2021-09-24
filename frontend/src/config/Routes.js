@@ -1,5 +1,4 @@
 import React from "react";
-import { useState, useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
 import Home from "../pages/Home/Home";
 import UsersSreen from "../pages/AdminPages/UsersScreen";
@@ -11,29 +10,10 @@ import UserModel from "../models/UserModel";
 import Login from "../pages/Login/Login";
 import { useRecoilValue } from "recoil";
 import { loggedInState } from "../recoil/selectors";
-import { userState } from "../recoil/atoms";
+// import { userState } from "../recoil/atoms";
 
-const Routes = (props) => {
+const Routes = () => {
   const loggedIn = useRecoilValue(loggedInState);
-  const [role, setRole] = useState("");
-  const [normalRole, setNormalRole] = useState("");
-
-  useEffect(() => {
-    UserModel.all().then((user) => {
-      if (loggedIn) {
-        user.users.forEach((user) => {
-          if (user.role === "admin" && user.name === "Binay") {
-            setRole(user.role);
-          } else {
-            setNormalRole(user.role);
-          }
-        });
-      }
-    });
-  }, []);
-
-  console.log(role);
-  console.log(normalRole);
 
   return (
     <Switch>
@@ -45,7 +25,6 @@ const Routes = (props) => {
           <Route path="/users/:id/edit" component={EditUser} />
           <Route path="/users/:id" component={ShowUser} />
           <Route path="/users" component={UsersSreen} />
-          {/* <Route  path='/tasks/new' component={ NewTask } /> */}
           <Route path="/tasks/:id/edit" component={EditTask} />
         </Switch>
       )}

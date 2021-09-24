@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import UserModel from "../../models/UserModel";
 import TaskModel from "../../models/TaskModel";
+import SingleUser from "../../components/User/SingleUser";
 import classes from "./UsersScreen.module.css";
+import globalStyles from "../../Assets/global-styles/bootstrap.min.module.css";
 import cn from "classnames";
 
 const UsersScreen = () => {
@@ -22,15 +24,15 @@ const UsersScreen = () => {
 
   const displayAllUsers = (users) => {
     return users.map((user) => {
-      return (
-        <>
-          <h1 className={cn(classes.SubContainer)}>{user.name}</h1>
-        </>
-      );
+      return <SingleUser key={user._id} data={user} />;
     });
   };
 
-  return <div className={classes.AllUsers}>{displayAllUsers(users)}</div>;
+  return (
+    <div className={cn(globalStyles.container, classes["Custom-container"])}>
+      {displayAllUsers(users)}
+    </div>
+  );
 };
 
 export default UsersScreen;

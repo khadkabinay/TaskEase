@@ -1,4 +1,5 @@
 import React from "react";
+import SingleTask from "../Task/SingleTask";
 import cn from "classnames";
 import classes from "./SingleUser.module.css";
 import globalStyles from "../../Assets/global-styles/bootstrap.min.module.css";
@@ -16,6 +17,7 @@ const SingleUser = (props) => {
         <div className={globalStyles["card-body"]}>
           <h5 className={globalStyles["card-title"]}>{name}</h5>
           <h5 className={globalStyles["card-text"]}>{email}</h5>
+          <SingleTask data={props.data.tasks} />
         </div>
       </div>
     </div>

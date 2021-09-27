@@ -10,7 +10,6 @@ import UserModel from "../models/UserModel";
 import Login from "../pages/Login/Login";
 import { useRecoilValue } from "recoil";
 import { loggedInState } from "../recoil/selectors";
-// import { userState } from "../recoil/atoms";
 
 const Routes = () => {
   const loggedIn = useRecoilValue(loggedInState);

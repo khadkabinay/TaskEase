@@ -6,7 +6,6 @@ import ShowUser from "../pages/ShowUser/ShowUser";
 import NewUser from "../pages/Register/NewUser";
 import EditUser from "../pages/EditUser/EditUser";
 import EditTask from "../components/Task/EditTask";
-import UserModel from "../models/UserModel";
 import Login from "../pages/Login/Login";
 import { useRecoilValue } from "recoil";
 import { loggedInState } from "../recoil/selectors";

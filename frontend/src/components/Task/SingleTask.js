@@ -8,7 +8,6 @@ const SingleTask = (props) => {
   return (
     <>
       <div className={globalStyles.card}>
-        {/* <ul className={globalStyles["list-group list-group-flush"]}> */}
         <li className={globalStyles["list-group-item"]}>
           {props.data.length !== 0 ? (
             props.data.map((task) => <h6>{task.name}</h6>)
@@ -16,7 +15,6 @@ const SingleTask = (props) => {
             <h6>No task yet</h6>
           )}
         </li>
-        {/* </ul> */}
       </div>
     </>
   );

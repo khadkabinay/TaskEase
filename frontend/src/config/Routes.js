@@ -2,7 +2,7 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import Home from "../pages/Home/Home";
 import UsersSreen from "../pages/AdminPages/UsersScreen";
-import ShowUser from "../pages/ShowUser/ShowUser";
+import UserScreen from "../pages/BasicUserPages/UserScreen";
 import NewUser from "../pages/Register/NewUser";
 import EditUser from "../pages/EditUser/EditUser";
 import EditTask from "../components/Task/EditTask";
@@ -21,7 +21,7 @@ const Routes = () => {
       {loggedIn && (
         <Switch>
           <Route path="/users/:id/edit" component={EditUser} />
-          <Route path="/users/:id" component={ShowUser} />
+          <Route path="/users/:id" component={UserScreen} />
           <Route path="/users" component={UsersSreen} />
           <Route path="/tasks/:id/edit" component={EditTask} />
         </Switch>

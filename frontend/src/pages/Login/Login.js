@@ -18,12 +18,12 @@ function Login(props) {
         setError(response.message);
       } else {
         localStorage.setItem("uid", response.signedJwt);
-        UserModel.all().then((response) => {
+        UserModel.show(response.data._id).then((response) => {
           setUser(response.data);
-          if (response.data.role === "normalUser") {
-            props.history.push(`/users/${response.data._id}`);
+          if (response.data.isAdmin) {
+            props.history.push(`/users/basic/${response.data._id}`);
           } else {
-            props.history.push("/users");
+            props.history.push("/users/admin");
           }
         });
       }

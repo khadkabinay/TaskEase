@@ -7,9 +7,18 @@ const index = async (req, res) => {
   try {
     const foundUsers = await db.User.find({}).populate("tasks").exec();
     const authUserFound = await db.User.findById(req.userId);
-    res
-      .status(200)
-      .json({ status: 200, users: foundUsers, data: authUserFound });
+    const adminUsers = await db.User.find(
+      { isAdmin: true },
+      { $ne: { isOwner: true } }
+    );
+    const basicUsers = await db.User.find({ isAdmin: false });
+    res.status(200).json({
+      status: 200,
+      users: foundUsers,
+      data: authUserFound,
+      adminUsers: adminUsers,
+      basicUsers: basicUsers,
+    });
   } catch (err) {
     return res.status(500).json({
       status: 500,

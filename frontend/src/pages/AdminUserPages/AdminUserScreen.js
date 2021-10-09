@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import UserModel from "../../models/UserModel";
 import SingleUser from "../../components/User/SingleUser";
-import classes from "./UsersScreen.module.css";
+import classes from "./AdminUser.module.css";
 import globalStyles from "../../Assets/global-styles/bootstrap.min.module.css";
 import cn from "classnames";
 
-const UsersScreen = () => {
+const AdminUserScreen = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -26,4 +26,4 @@ const UsersScreen = () => {
   );
 };
 
-export default UsersScreen;
+export default AdminUserScreen;

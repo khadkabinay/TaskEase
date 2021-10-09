@@ -1,16 +1,14 @@
 import React, { useState } from "react";
-import UserModel from "../../models/UserModel";
 import AuthModel from "../../models/AuthModel";
-import classes from "./NewUser.module.css";
+import classes from "./Register.module.css";
 
-function NewUser(props) {
+function Register(props) {
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [image, setImage] = useState("");
   const [password, setPassword] = useState("");
   const [phoneNumber, setPhoneNumer] = useState("");
-  const [role, setRole] = useState("");
   const [error, setError] = useState("");
 
   function handleSubmit(event) {
@@ -137,4 +135,4 @@ function NewUser(props) {
   );
 }
 
-export default NewUser;
+export default Register;

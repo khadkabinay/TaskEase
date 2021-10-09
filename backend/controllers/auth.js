@@ -35,12 +35,14 @@ const login = async (req, res) => {
     const foundUser = await await db.User.findOne({ email: req.body.email });
 
     if (!foundUser) {
+      console.log("first");
       return res.send({ message: "Email or Password incorrect" });
     }
 
     const match = await bcrypt.compare(req.body.password, foundUser.password);
 
     if (!match) {
+      console.log("second");
       return res.send({ message: "Email or Password incorrect" });
     }
 

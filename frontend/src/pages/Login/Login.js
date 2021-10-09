@@ -3,13 +3,15 @@ import AuthModel from "../../models/AuthModel";
 import UserModel from "../../models/UserModel";
 import classes from "./Login.module.css";
 import { useSetRecoilState } from "recoil";
+import { useRecoilState } from "recoil";
 import { userState } from "../../recoil/atoms";
 
 function Login(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const setUser = useSetRecoilState(userState);
+  // const setUser = useSetRecoilState(userState);
+  const [user, setUser] = useRecoilState(userState);
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -18,12 +20,16 @@ function Login(props) {
         setError(response.message);
       } else {
         localStorage.setItem("uid", response.signedJwt);
-        UserModel.show(response.data._id).then((response) => {
-          setUser(response.data);
-          if (response.data.isAdmin) {
-            props.history.push(`/users/basic/${response.data._id}`);
-          } else {
+        UserModel.show(response.id).then((response) => {
+          setUser(response.user);
+          if (!response.user.isAdmin) {
+            props.history.push(`/users/basic`);
+          } else if (response.user.isAdmin && !response.user.isOwner) {
             props.history.push("/users/admin");
+          } else if (response.user.isAdmin && response.user.isOwner) {
+            props.history.push("/users/superuser");
+          } else {
+            props.history.push("/users/login");
           }
         });
       }

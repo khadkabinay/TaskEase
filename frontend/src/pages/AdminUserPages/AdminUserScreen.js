@@ -8,21 +8,24 @@ import cn from "classnames";
 const AdminUserScreen = () => {
   const [users, setUsers] = useState([]);
 
-  useEffect(() => {
-    UserModel.all().then((data) => {
-      setUsers(data.users);
-    });
-  }, [users]);
-  const displayAllUsers = (users) => {
-    return users.map((user) => {
-      return <SingleUser key={user._id} data={user} />;
-    });
-  };
+  // useEffect(() => {
+  //   UserModel.all().then((data) => {
+  //     setUsers(data.users);
+  //   });
+  // }, [users]);
+  // const displayAllUsers = (users) => {
+  //   return users.map((user) => {
+  //     return <SingleUser key={user._id} data={user} />;
+  //   });
+  // };
 
   return (
-    <div className={cn(globalStyles.container, classes["Custom-container"])}>
-      {displayAllUsers(users)}
-    </div>
+    // <div className={cn(globalStyles.container, classes["Custom-container"])}>
+    //   {displayAllUsers(users)}
+    // </div>
+    <>
+      <h1>Admin user page </h1>
+    </>
   );
 };
 

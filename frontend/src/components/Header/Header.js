@@ -1,24 +1,14 @@
 import React from "react";
-import { useEffect } from "react";
 import cn from "classnames";
 import { NavLink } from "react-router-dom";
-import UserModel from "../../models/UserModel";
-import { useRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
+import { useSetRecoilState } from "recoil";
 import { userState } from "../../recoil/atoms";
 import classes from "./Header.module.css";
 
 const Header = (props) => {
-  const [user, setUser] = useRecoilState(userState);
-
-  //Provides consistancy for the user's authentication
-  useEffect(function () {
-    if (localStorage.getItem("uid")) {
-      UserModel.all().then((response) => {
-        setUser(response.data);
-      });
-    }
-    //eslint-disable-next-line
-  }, []);
+  const setUser = useSetRecoilState(userState);
+  const user = useRecoilValue(userState);
 
   function logOut() {
     setUser(null);
@@ -30,11 +20,11 @@ const Header = (props) => {
       <>
         {user ? (
           <div>
-            {user.role === "admin" ? (
+            {user.isOwner ? (
               <div>
                 <ul className={cn(classes.Header, classes.HeaderLi)}>
                   <li>
-                    <NavLink to="/users">Admin</NavLink>
+                    <NavLink to="/users/superuser">Super User</NavLink>
                   </li>
                   <li>
                     <NavLink to="/" onClick={logOut}>
@@ -47,7 +37,7 @@ const Header = (props) => {
               <div>
                 <ul className={cn(classes.Header, classes.HeaderLi)}>
                   <li>
-                    <NavLink to={`/users/${user._id}`}>Employee</NavLink>
+                    <NavLink to={`/users/basic`}>Basic User</NavLink>
                   </li>
                   <li>
                     <NavLink to="/" onClick={logOut}>

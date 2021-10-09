@@ -23,8 +23,8 @@ const Routes = () => {
         <Switch>
           <Route path="/users/:id/edit" component={EditUser} />
           <Route path="/users/basic" component={BasicUserScreen} />
-          <Route exact path="/users/admin" component={AdminUserScreen} />
-          <Route exact path="/users/super" component={SuperUserScreen} />
+          <Route path="/users/admin" component={AdminUserScreen} />
+          <Route path="/users/superuser" component={SuperUserScreen} />
           {/* <Route path="/tasks/:id/edit" component={EditTask} /> */}
         </Switch>
       )}

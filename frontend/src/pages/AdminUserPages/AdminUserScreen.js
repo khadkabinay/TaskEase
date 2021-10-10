@@ -6,13 +6,15 @@ import globalStyles from "../../Assets/global-styles/bootstrap.min.module.css";
 import cn from "classnames";
 
 const AdminUserScreen = () => {
-  const [users, setUsers] = useState([]);
+  // const [adminUsers, setAdminUsers] = useState([]);
 
   // useEffect(() => {
   //   UserModel.all().then((data) => {
-  //     setUsers(data.users);
+  //     console.log(data);
+  //     // setAdminUsers(data.users);
   //   });
-  // }, [users]);
+  // }, [adminUsers]);
+
   // const displayAllUsers = (users) => {
   //   return users.map((user) => {
   //     return <SingleUser key={user._id} data={user} />;

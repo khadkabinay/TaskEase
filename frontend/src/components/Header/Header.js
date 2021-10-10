@@ -1,14 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
+import UserModel from "../../models/UserModel";
 import cn from "classnames";
 import { NavLink } from "react-router-dom";
-import { useRecoilValue } from "recoil";
-import { useSetRecoilState } from "recoil";
+import { useRecoilState } from "recoil";
 import { userState } from "../../recoil/atoms";
 import classes from "./Header.module.css";
 
 const Header = (props) => {
-  const setUser = useSetRecoilState(userState);
-  const user = useRecoilValue(userState);
+  const [user, setUser] = useRecoilState(userState);
+
+  useEffect(() => {
+    if (localStorage.getItem("uid"))
+      UserModel.all().then((response) => {
+        console.log(response);
+      });
+  }, []);
 
   function logOut() {
     setUser(null);
@@ -25,6 +31,19 @@ const Header = (props) => {
                 <ul className={cn(classes.Header, classes.HeaderLi)}>
                   <li>
                     <NavLink to="/users/superuser">Super User</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/" onClick={logOut}>
+                      Log Out
+                    </NavLink>
+                  </li>
+                </ul>
+              </div>
+            ) : user.isAdmin ? (
+              <div>
+                <ul className={cn(classes.Header, classes.HeaderLi)}>
+                  <li>
+                    <NavLink to={`/users/admin`}>admin User</NavLink>
                   </li>
                   <li>
                     <NavLink to="/" onClick={logOut}>

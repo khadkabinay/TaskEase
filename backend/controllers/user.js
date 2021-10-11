@@ -5,19 +5,15 @@ const db = require("../models");
 // INDEX ROUTE
 const index = async (req, res) => {
   try {
-    const foundUsers = await db.User.find({}).populate("tasks").exec();
-    const authUserFound = await db.User.findById(req.userId);
-    console.log(authUserFound, "au");
-    const adminUsers = await db.User.find(
-      { isAdmin: true },
-      { $ne: { isOwner: true } }
-    );
+    const authUserVerified = await db.User.findById(req.userId);
+    const adminUsers = await db.User.find({
+      $and: [{ isAdmin: true }, { isOwner: false }],
+    });
     const basicUsers = await db.User.find({ isAdmin: false });
 
     res.status(200).json({
       status: 200,
-      users: foundUsers,
-      data: authUserFound,
+      data: authUserVerified,
       adminUsers: adminUsers,
       basicUsers: basicUsers,
     });

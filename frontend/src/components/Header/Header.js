@@ -12,7 +12,7 @@ const Header = (props) => {
   useEffect(() => {
     if (localStorage.getItem("uid"))
       UserModel.all().then((response) => {
-        console.log(response);
+        setUser(response.data);
       });
   }, []);
 

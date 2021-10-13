@@ -6,27 +6,26 @@ import globalStyles from "../../Assets/global-styles/bootstrap.min.module.css";
 import cn from "classnames";
 
 const AdminUserScreen = () => {
-  // const [adminUsers, setAdminUsers] = useState([]);
+  const [basicUsers, setBasicUsers] = useState([]);
 
-  // useEffect(() => {
-  //   UserModel.all().then((data) => {
-  //     console.log(data);
-  //     // setAdminUsers(data.users);
-  //   });
-  // }, [adminUsers]);
+  useEffect(() => {
+    UserModel.all().then((data) => {
+      setBasicUsers(data.basicUsers);
+    });
+  }, []);
 
-  // const displayAllUsers = (users) => {
-  //   return users.map((user) => {
-  //     return <SingleUser key={user._id} data={user} />;
-  //   });
-  // };
+  const displayBasicUsers = (users) => {
+    return users.map((user) => {
+      return <SingleUser key={user._id} data={user} />;
+    });
+  };
 
   return (
-    // <div className={cn(globalStyles.container, classes["Custom-container"])}>
-    //   {displayAllUsers(users)}
-    // </div>
     <>
       <h1>Admin user page </h1>
+      <div className={cn(globalStyles.container, classes["Custom-container"])}>
+        {displayBasicUsers(basicUsers)}
+      </div>
     </>
   );
 };

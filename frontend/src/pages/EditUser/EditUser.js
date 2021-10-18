@@ -9,7 +9,6 @@ class EditUser extends React.Component {
     image: "",
     phoneNumber: "",
     completedTask: 0,
-    role: "",
   };
 
   componentDidMount() {

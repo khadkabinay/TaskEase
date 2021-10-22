@@ -30,7 +30,6 @@ class NewTask extends React.Component {
       this.setState(
         {
           name: "",
-          //fetchTasks fuction runs after name gets empty to make sure that tasks are up to date
         },
         () => this.props.fetchTasks()
       );

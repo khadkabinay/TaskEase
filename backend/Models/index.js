@@ -1,7 +1,8 @@
 // MODELS AND DATABASE CONNECTION
 
 const mongoose = require("mongoose");
-const connectionString = "mongodb://localhost:27017/tasks-db";
+const connectionString =
+  process.env.MONGO_URL || "mongodb://localhost:27017/tasks-db";
 
 mongoose
   .connect(connectionString, {

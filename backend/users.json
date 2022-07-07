@@ -4,20 +4,18 @@
       "name": "Binay",
       "username": "binu",
       "email": "binu@yahoo.com",
-      "image": "https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bWFufGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "image": "https://images.unsplash.com/photo-1485875437342-9b39470b3d95?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8d29tZW58ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
       "password": "binu123",
       "phoneNumber": 1312242,
-      "isAdmin": true,
-      "isOwner": true
+      "isAdmin": true
     },
     {
       "name": "sonu",
       "username": "sonu",
       "email": "sonu@yahoo.com",
-      "image": "https://images.unsplash.com/photo-1485875437342-9b39470b3d95?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8d29tZW58ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "image": "https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bWFufGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
       "password": "sonu123",
-      "phoneNumber": 242422234,
-      "isAdmin": true
+      "phoneNumber": 242422234
     }
   ]
 }

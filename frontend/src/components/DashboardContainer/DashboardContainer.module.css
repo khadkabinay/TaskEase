@@ -1,0 +1,9 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  background-color: #96b485;
+  gap: 15px;
+  padding: 20px;
+  align-content: center;
+  justify-content: space-around;
+}

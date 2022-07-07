@@ -24,64 +24,74 @@ const Header = (props) => {
   return (
     <header>
       <>
-        {user ? (
+        <div className={classes.brand}>
+          <h1 className={classes["brand-name"]}>TASKEASE</h1>
           <div>
-            {user.isOwner ? (
+            {user ? (
               <div>
-                <ul className={cn(classes.Header, classes.HeaderLi)}>
-                  <li>
-                    <NavLink to="/users/superuser">Super User</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/" onClick={logOut}>
-                      Log Out
-                    </NavLink>
-                  </li>
-                </ul>
-              </div>
-            ) : user.isAdmin ? (
-              <div>
-                <ul className={cn(classes.Header, classes.HeaderLi)}>
-                  <li>
-                    <NavLink to={`/users/admin`}>admin User</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/" onClick={logOut}>
-                      Log Out
-                    </NavLink>
-                  </li>
-                </ul>
+                {user.isAdmin ? (
+                  <ul className={`${classes["header-navbar"]} `}>
+                    <li>
+                      <NavLink
+                        to={`/users/admin`}
+                        style={{ textDecoration: "none" }}
+                      >
+                        {user.name}
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        to="/"
+                        onClick={logOut}
+                        style={{ textDecoration: "none" }}
+                      >
+                        Log Out
+                      </NavLink>
+                    </li>
+                  </ul>
+                ) : (
+                  <ul className={classes["header-navbar"]}>
+                    <li>
+                      <NavLink
+                        to={`/users/dashboard`}
+                        style={{ textDecoration: "none" }}
+                      >
+                        {user.name}
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        to="/"
+                        onClick={logOut}
+                        style={{ textDecoration: "none" }}
+                      >
+                        Log Out
+                      </NavLink>
+                    </li>
+                  </ul>
+                )}
               </div>
             ) : (
-              <div>
-                <ul className={cn(classes.Header, classes.HeaderLi)}>
-                  <li>
-                    <NavLink to={`/users/basic`}>Basic User</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/" onClick={logOut}>
-                      Log Out
-                    </NavLink>
-                  </li>
-                </ul>
-              </div>
+              <ul className={classes["header-navbar"]}>
+                <li>
+                  <NavLink to="/" style={{ textDecoration: "none" }}>
+                    Home
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to={"/login"} style={{ textDecoration: "none" }}>
+                    Login
+                  </NavLink>{" "}
+                </li>
+                <li>
+                  <NavLink to="/register" style={{ textDecoration: "none" }}>
+                    Sign Up
+                  </NavLink>
+                </li>
+              </ul>
             )}
           </div>
-        ) : (
-          <div>
-            <ul className={cn(classes.Header, classes.HeaderLi)}>
-              <li>
-                <NavLink to="/">Home</NavLink>
-              </li>
-              <li>
-                <NavLink to={"/login"}>Login</NavLink>{" "}
-              </li>
-              <li>
-                <NavLink to="/register">Sign Up</NavLink>
-              </li>
-            </ul>
-          </div>
-        )}
+        </div>
       </>
     </header>
   );

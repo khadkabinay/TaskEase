@@ -6,16 +6,13 @@ const db = require("../models");
 const index = async (req, res) => {
   try {
     const authUserVerified = await db.User.findById(req.userId);
-    const adminUsers = await db.User.find({
-      $and: [{ isAdmin: true }, { isOwner: false }],
-    });
-    const basicUsers = await db.User.find({ isAdmin: false });
-
+    const users = await db.User.find({ isAdmin: false });
+    const admin = await db.User.find({ isAdmin: true });
     res.status(200).json({
       status: 200,
       data: authUserVerified,
-      adminUsers: adminUsers,
-      basicUsers: basicUsers,
+      userData: users,
+      adminData: admin,
     });
   } catch (err) {
     return res.status(500).json({

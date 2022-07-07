@@ -114,17 +114,6 @@ function Register(props) {
             value={phoneNumber}
           />
         </div>
-        {/* <div className="form-group">
-          <label htmlFor='role'>Role&ensp;
-
-              <select name="role" value={role}  onChange={(e) => setRole(e.target.value)}  class="form-control" >
-                        <option value={role}>Select a Role</option>
-                        <option >admin</option>
-                        <option >normalUser</option>
-
-                </select>
-            </label>
-          </div> */}
         <input
           type="submit"
           value="Create An Account"

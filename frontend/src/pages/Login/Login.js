@@ -20,12 +20,10 @@ function Login(props) {
         localStorage.setItem("uid", response.signedJwt);
         UserModel.all().then((response) => {
           setUser(response.data);
-          if (!response.data.isAdmin) {
-            props.history.push(`/users/basic`);
-          } else if (response.data.isAdmin && !response.data.isOwner) {
-            props.history.push("/users/admin");
-          } else if (response.data.isAdmin && response.data.isOwner) {
-            props.history.push("/users/superuser");
+          if (response.data.isAdmin) {
+            props.history.push(`/users/admin`);
+          } else if (!response.data.isAdmin) {
+            props.history.push("/users/dashboard");
           } else {
             props.history.push("/users/login");
           }

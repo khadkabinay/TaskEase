@@ -1,9 +1,8 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import Home from "../pages/Home/Home";
-import AdminUserScreen from "../pages/AdminUserPages/AdminUserScreen";
-import BasicUserScreen from "../pages/BasicUserPages/BasicUserScreen";
-import SuperUserScreen from "../pages/SuperUserPages/SuperUserScreen";
+import AdminScreen from "../pages/AdminDashboard/AdminScreen";
+import DashboardScreen from "../pages/Dashboard/DashboardScreen";
 import Register from "../pages/Register/Register";
 import EditUser from "../pages/EditUser/EditUser";
 import EditTask from "../components/Task/EditTask";
@@ -22,9 +21,8 @@ const Routes = () => {
       {loggedIn && (
         <Switch>
           <Route path="/users/:id/edit" component={EditUser} />
-          <Route path="/users/basic" component={BasicUserScreen} />
-          <Route path="/users/admin" component={AdminUserScreen} />
-          <Route path="/users/superuser" component={SuperUserScreen} />
+          <Route path="/users/dashboard" component={DashboardScreen} />
+          <Route path="/users/admin" component={AdminScreen} />
           {/* <Route path="/tasks/:id/edit" component={EditTask} /> */}
         </Switch>
       )}

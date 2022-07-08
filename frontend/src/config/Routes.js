@@ -1,10 +1,10 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import Home from "../pages/Home/Home";
+import HomeScreen from "../pages/Home/HomeScreen";
 import AdminScreen from "../pages/AdminDashboard/AdminScreen";
 import DashboardScreen from "../pages/Dashboard/DashboardScreen";
 import Register from "../pages/Register/Register";
-import EditUser from "../pages/EditUser/EditUser";
+import ProfileEditScreen from "../pages/ProfileEditScreen/ProfileEditSreen";
 import EditTask from "../components/Task/EditTask";
 import Login from "../pages/Login/Login";
 import { useRecoilValue } from "recoil";
@@ -15,12 +15,12 @@ const Routes = () => {
 
   return (
     <Switch>
-      <Route exact path="/" component={Home} />
+      <Route exact path="/" component={HomeScreen} />
       <Route exact path="/register" component={Register} />
       <Route exact path="/login" component={Login} />
       {loggedIn && (
         <Switch>
-          <Route path="/users/:id/edit" component={EditUser} />
+          <Route path="/users/:id/edit" component={ProfileEditScreen} />
           <Route path="/users/dashboard" component={DashboardScreen} />
           <Route path="/users/admin" component={AdminScreen} />
           {/* <Route path="/tasks/:id/edit" component={EditTask} /> */}

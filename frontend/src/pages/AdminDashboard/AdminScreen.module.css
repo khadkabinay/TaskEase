@@ -2,3 +2,7 @@
 .Custom-container {
   display: flex;
 }
+
+.item-space {
+  margin-right: 50px;
+}

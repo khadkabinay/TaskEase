@@ -1,10 +1,10 @@
 import React from "react";
 import cn from "classnames";
-import classes from "./Home.module.css";
+import classes from "./HomeScreen.module.css";
 import globalStyles from "../../Assets/global-styles/bootstrap.min.module.css";
 import Footer from "../../components/Footer/Footer";
 
-const Home = () => {
+const HomeScreen = () => {
   return (
     <>
       <div className={classes.HomePage}>
@@ -23,4 +23,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomeScreen;

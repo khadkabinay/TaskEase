@@ -1,6 +1,6 @@
 /* HOME PAGE STYLE */
 
-.TaskTitle {
+.taskTitle {
   background-color: rgba(154, 212, 61, 0.6);
   padding: 30px;
   width: 100%;
@@ -10,7 +10,7 @@
   box-shadow: 4px 10px 10px 0px rgba(154, 212, 61, 0.2);
 }
 
-.HomePage {
+.homePage {
   background-image: url("../../Assets/images/taskmg.jpg");
   height: 90vh;
   background-position: center;

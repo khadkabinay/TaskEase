@@ -4,8 +4,8 @@ const mongoose = require("mongoose");
 const taskSchema = new mongoose.Schema(
   {
     name: { type: String, required: [true, "You must provide a Task."] },
-    date: { type: Date, required: true, default: Date.now },
-    isCompleted: { type: Boolean },
+    date: { type: Date, default: Date.now },
+    isCompleted: { type: Boolean, default: false },
     user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
   },
   {

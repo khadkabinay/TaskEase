@@ -1,6 +1,16 @@
-// import React from "react";
-// import TaskModel from "../../models/TaskModel";
-// import SingleTask from "./SingleTask";
+import React from "react";
+
+const TaskList = (props) => {
+  const displayTasks = (tasks) => {
+    tasks.map((task) => {
+      return <div>{task.name}</div>;
+    });
+  };
+
+  return <div>{displayTasks(props.tasks)}</div>;
+};
+
+export default TaskList;
 
 // class TaskList extends React.Component {
 //   state = {

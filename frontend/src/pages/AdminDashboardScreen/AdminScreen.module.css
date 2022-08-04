@@ -1,8 +1,8 @@
 /* USERLIST STYLES */
-.Custom-container {
+.customContainer {
   display: flex;
 }
 
-.item-space {
+.itemSpace {
   margin-right: 50px;
 }

@@ -14,7 +14,7 @@ const Header = (props) => {
       UserModel.all().then((response) => {
         setUser(response.data);
       });
-  }, []);
+  }, [setUser]);
 
   function logOut() {
     setUser(null);
@@ -33,7 +33,7 @@ const Header = (props) => {
                   <ul className={`${classes["header-navbar"]} `}>
                     <li>
                       <NavLink
-                        to={`/users/admin`}
+                        to={user ? `/users/${user._id}/edit` : "/"}
                         style={{ textDecoration: "none" }}
                       >
                         {user.name}
@@ -45,7 +45,7 @@ const Header = (props) => {
                         onClick={logOut}
                         style={{ textDecoration: "none" }}
                       >
-                        Log Out
+                        LogOut
                       </NavLink>
                     </li>
                   </ul>
@@ -53,7 +53,7 @@ const Header = (props) => {
                   <ul className={classes["header-navbar"]}>
                     <li>
                       <NavLink
-                        to={`/users/dashboard`}
+                        to={user ? `/users/${user._id}/edit` : "/"}
                         style={{ textDecoration: "none" }}
                       >
                         {user.name}

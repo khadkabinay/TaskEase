@@ -7,10 +7,10 @@ import Footer from "../../components/Footer/Footer";
 const HomeScreen = () => {
   return (
     <>
-      <div className={classes.HomePage}>
+      <div className={classes.homePage}>
         <h1
           className={cn(
-            classes.TaskTitle,
+            classes.taskTitle,
             globalStyles["bg-info"],
             globalStyles["opacity-25"]
           )}

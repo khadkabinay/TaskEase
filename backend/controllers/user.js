@@ -5,14 +5,20 @@ const db = require("../models");
 // INDEX ROUTE
 const index = async (req, res) => {
   try {
-    const authUserVerified = await db.User.findById(req.userId);
-    const users = await db.User.find({ isAdmin: false });
-    const admin = await db.User.find({ isAdmin: true });
+    const authUserVerified = await db.User.findById(req.userId)
+      .populate("tasks")
+      .exec();
+    const users = await db.User.find({ isAdmin: false })
+      .populate("tasks")
+      .exec();
+    const adminInfo = await db.User.find({ isAdmin: true });
+    const allUsers = await db.User.find({}).populate("tasks").exec();
     res.status(200).json({
       status: 200,
       data: authUserVerified,
+      adminUser: adminInfo,
       userData: users,
-      adminData: admin,
+      usersData: allUsers,
     });
   } catch (err) {
     return res.status(500).json({
@@ -55,7 +61,6 @@ const create = async (req, res) => {
 };
 
 //UPDATE ROUTE
-
 const update = async (req, res) => {
   try {
     const userUpdated = await db.User.findByIdAndUpdate(
@@ -79,7 +84,9 @@ const update = async (req, res) => {
 // DELETE ROUTE
 const destroy = async (req, res) => {
   try {
-    const userDeleted = await db.User.findByIdAndDelete(req.params.id);
+    const userDeleted = await db.User.findByIdAndDelete(
+      req.params.id || req._id
+    );
     if (!userDeleted) {
       res.status(200).json({ message: "No user is found with id" });
     } else {

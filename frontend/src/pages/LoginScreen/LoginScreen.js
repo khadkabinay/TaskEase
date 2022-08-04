@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import AuthModel from "../../models/AuthModel";
 import UserModel from "../../models/UserModel";
-import classes from "./Login.module.css";
+import classes from "./LoginScreen.module.css";
 import { useSetRecoilState } from "recoil";
 import { userState } from "../../recoil/atoms";
 
-function Login(props) {
+function LoginScreen(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -34,7 +34,7 @@ function Login(props) {
 
   return (
     <div
-      className={`card form-group ${classes.LogForm}`}
+      className={`card form-group ${classes.logForm}`}
       style={{ width: "20%" }}
     >
       <h2>Login</h2>
@@ -67,10 +67,10 @@ function Login(props) {
           />
         </div>
 
-        <input type="submit" value="Login" className={classes.LogBtn} />
+        <input type="submit" value="Login" className={classes.logBtn} />
       </form>
     </div>
   );
 }
 
-export default Login;
+export default LoginScreen;

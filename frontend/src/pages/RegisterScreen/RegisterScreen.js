@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import AuthModel from "../../models/AuthModel";
-import classes from "./Register.module.css";
+import classes from "./RegisterScreen.module.css";
 
 function Register(props) {
   const [name, setName] = useState("");

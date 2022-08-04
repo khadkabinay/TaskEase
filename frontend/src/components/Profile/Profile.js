@@ -1,14 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import cn from "classnames";
-import classes from "./UserProfile.module.css";
+import classes from "./Profile.module.css";
 import globalStyles from "../../Assets/global-styles/bootstrap.min.module.css";
 
-const UserProfile = (props) => {
-  const { name, email, image } = props.data;
+const Profile = (props) => {
+  const { _id, name, email, image } = props.data;
+
   return (
     <>
-      <div className={cn(globalStyles.card, classes["Card-Width"])}>
+      <div className={cn(globalStyles.card, classes.cardWidth)}>
         <img
           src={image}
           className={globalStyles["card-img-top"]}
@@ -17,11 +18,17 @@ const UserProfile = (props) => {
         <div className={globalStyles["card-body"]}>
           <h5 className={globalStyles["card-title"]}>{name}</h5>
           <h5 className={globalStyles["card-text"]}>{email}</h5>
-          <Link to="/users/:id/edit">UPDATE</Link>
+          <Link to={`/users/${_id}/edit`} className={classes.linkSpace}>
+            UPDATE
+          </Link>
+
+          <Link to={`/users/${_id}/taskdetail`} className={classes.linkSpace}>
+            MORE
+          </Link>
         </div>
       </div>
     </>
   );
 };
 
-export default UserProfile;
+export default Profile;

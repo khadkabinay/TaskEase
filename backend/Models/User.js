@@ -30,7 +30,7 @@ const userSchema = new mongoose.Schema(
   }
 );
 
-// DELETES PASSWORD'S FIELD
+// DELETES PASSWORD'S FIELD WHEN IT SENDS JSON
 userSchema.set("toJSON", {
   transform: (doc, ret, opt) => {
     delete ret["password"];

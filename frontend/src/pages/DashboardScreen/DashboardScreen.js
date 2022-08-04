@@ -22,9 +22,6 @@ const DashboardScreen = () => {
       <DashboardContainer>
         <FontIcon icon={faAlignJustify} />
         <Profile data={user} key={user._id} />
-        {user.tasks.map((task) => (
-          <div key={task._id}>{task.name}</div>
-        ))}
         <div className={classes.linkStyle}>
           <Link to={`/users/newtask`}>CREATE A TASK</Link>
         </div>

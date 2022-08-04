@@ -5,7 +5,7 @@ import AdminScreen from "../pages/AdminDashboardScreen/AdminScreen";
 import DashboardScreen from "../pages/DashboardScreen/DashboardScreen";
 import ProfileEditScreen from "../pages/ProfileEditScreen/ProfileEditScreen";
 import DeleteMsgScreen from "../pages/DeleteMsgScreen/DeleteMsgScreen";
-import EditTask from "../components/Task/EditTask";
+import { TaskEditScreen } from "../pages/TaskEditScreen/TaskEditScreen";
 import NewTaskScreen from "../pages/NewTaskScreen/NewTaskScreen";
 import TaskDetailScreen from "../pages/TaskDetailScreen/TaskDetailScreen";
 import LoginScreen from "../pages/LoginScreen/LoginScreen";
@@ -28,6 +28,7 @@ const Routes = (props) => {
         <Switch>
           <Route path="/users/:id/edit" component={ProfileEditScreen} />
           <Route path="/users/:id/taskdetail" component={TaskDetailScreen} />
+          <Route path="/users/task/:id/edit" component={TaskEditScreen} />
           <Route exact path="/users/dashboard" component={DashboardScreen} />
           <Route exact path="/users/newtask" component={NewTaskScreen} />
           {user.isAdmin ? (

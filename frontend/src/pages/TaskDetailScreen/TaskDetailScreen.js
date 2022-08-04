@@ -5,12 +5,19 @@ import ProfileInfoCard from "../../components/ProfileInfoCard/ProfileInfoCard";
 
 const TaskDetailScreen = (props) => {
   const [usersData, setUsersData] = useState([]);
+  const [taskData, setTaskData] = useState([]);
 
   useEffect(() => {
     UserModel.all().then((data) => {
       setUsersData(data.usersData);
     });
-  }, [usersData]);
+  }, []);
+
+  useEffect(() => {
+    UserModel.show(props.match.params.id).then((data) => {
+      setTaskData(data.user.tasks);
+    });
+  }, [props.match.params.id]);
 
   const displayFilteredUser = (users) => {
     const filteredUser = users.filter(
@@ -21,7 +28,16 @@ const TaskDetailScreen = (props) => {
     ));
   };
 
-  return <div>{displayFilteredUser(usersData)}</div>;
+  const displayFilteredTaskDetail = (tasks) => {
+    return tasks.map((task) => <TaskDetail key={task._id} data={task} />);
+  };
+
+  return (
+    <>
+      <div>{displayFilteredUser(usersData)}</div>
+      <div>{displayFilteredTaskDetail(taskData)}</div>
+    </>
+  );
 };
 
 export default TaskDetailScreen;

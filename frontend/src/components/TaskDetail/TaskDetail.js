@@ -1,17 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import classes from "./TaskDetail.module.css";
+import { Link } from "react-router-dom";
 
 const TaskDetail = (props) => {
-  const [changeState, setChangeState] = useState(false);
-  const changeHandler = () => {
-    return setChangeState(true);
-  };
-
-  console.log(changeState, "changeState");
+  const { _id, name } = props.data;
   return (
-    <div className={classes.taskDetailCard} onClick={changeHandler}>
-      {props.children}
-    </div>
+    <>
+      <div className={classes.taskDetailCard}>
+        {name}{" "}
+        <div>
+          <Link to={`/users/task/${_id}/edit`}>UPDATE</Link>
+        </div>
+      </div>
+    </>
   );
 };
 

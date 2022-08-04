@@ -21,11 +21,11 @@ const ProfileInfoCard = (props) => {
           <h5 className={globalStyles["card-text"]}>{email}</h5>
         </div>
 
-        <div>
+        {/* <div>
           {tasks.map((task) => (
             <TaskDetail key={task._id}>{task.name}</TaskDetail>
           ))}
-        </div>
+        </div> */}
 
         <Link to={`/users/${_id}/taskdetail`} className={classes.linkSpace}>
           MORE

@@ -48,9 +48,6 @@ const AdminScreen = () => {
         <Profile data={user} />
         {displayUserInfo(userData)}
         <Link to={`/users/newtask`}>CREATE A TASK</Link>
-        {user.tasks.map((task) => (
-          <div key={task._id}>{task.name}</div>
-        ))}
       </DashboardContainer>
     </>
   );

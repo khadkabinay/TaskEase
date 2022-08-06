@@ -1,5 +1,19 @@
 .taskDetailCard {
-  padding: 20px;
+  padding: 10px;
   background-color: pink;
   margin-bottom: 4px;
+}
+
+.btnGroupStyle {
+  display: block;
+  padding: 5px;
+}
+
+.btnStyle {
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.linkStyle {
+  text-decoration: none;
 }

@@ -8,6 +8,7 @@ import DeleteMsgScreen from "../pages/DeleteMsgScreen/DeleteMsgScreen";
 import { TaskEditScreen } from "../pages/TaskEditScreen/TaskEditScreen";
 import NewTaskScreen from "../pages/NewTaskScreen/NewTaskScreen";
 import TaskDetailScreen from "../pages/TaskDetailScreen/TaskDetailScreen";
+import TaskDeletionScreen from "../pages/TaskDeletionScreen/TaskDeletionScreen";
 import LoginScreen from "../pages/LoginScreen/LoginScreen";
 import RegisterScreen from "../pages/RegisterScreen/RegisterScreen";
 import { useRecoilValue } from "recoil";
@@ -29,6 +30,7 @@ const Routes = (props) => {
           <Route path="/users/:id/edit" component={ProfileEditScreen} />
           <Route path="/users/:id/taskdetail" component={TaskDetailScreen} />
           <Route path="/users/task/:id/edit" component={TaskEditScreen} />
+          <Route path="/users/task/:id/delete" component={TaskDeletionScreen} />
           <Route exact path="/users/dashboard" component={DashboardScreen} />
           <Route exact path="/users/newtask" component={NewTaskScreen} />
           {user.isAdmin ? (

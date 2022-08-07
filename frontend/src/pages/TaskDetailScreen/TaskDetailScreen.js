@@ -17,7 +17,7 @@ const TaskDetailScreen = (props) => {
     UserModel.show(props.match.params.id).then((data) => {
       setTaskData(data.user.tasks);
     });
-  }, [taskData, props.match.params.id]);
+  }, [props.match.params.id]);
 
   const displayFilteredUser = (users) => {
     const filteredUser = users.filter(

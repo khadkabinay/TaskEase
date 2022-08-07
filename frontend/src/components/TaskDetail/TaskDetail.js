@@ -2,23 +2,17 @@ import React, { useState } from "react";
 import classes from "./TaskDetail.module.css";
 import { Link } from "react-router-dom";
 import TaskModel from "../../models/TaskModel";
+import TaskDeletionScreen from "../../pages/TaskDeletionScreen/TaskDeletionScreen";
 
 const TaskDetail = (props) => {
-  const { _id, name, isCompleted, user } = props.data;
+  const { _id, name, isCompleted } = props.data;
+
   const [isDone, setIsDone] = useState(isCompleted);
 
   const submitHadler = (e) => {
     e.preventDefault();
     TaskModel.edit(_id, { isCompleted: !isDone }).then((data) => {
       setIsDone(data.task.isCompleted);
-    });
-  };
-
-  const removeTask = () => {
-    const { _id, user } = props.data;
-    console.log(_id, user, "_id and user");
-    TaskModel.destroy(_id, user).then((data) => {
-      console.log("your task is deleted");
     });
   };
 
@@ -42,8 +36,7 @@ const TaskDetail = (props) => {
           </button>
           <button type="button" className={classes.btnStyle}>
             <Link
-              onClick={removeTask}
-              to={`/users/${user}/taskdetail`}
+              to={`/users/task/${_id}/delete`}
               className={classes.linkStyle}
             >
               DELETE

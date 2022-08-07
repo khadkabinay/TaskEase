@@ -73,14 +73,11 @@ const update = async (req, res) => {
 // DELETE ROUTE FOR TASK
 const destroy = async (req, res) => {
   try {
-    // const taskDeleted = await db.Task.findByIdAndDelete(req.params.id);
-    console.log(req._id, "_id");
-    const taskDeleted = await db.Task.findByIdAndDelete(req._id);
+    const taskDeleted = await db.Task.findByIdAndDelete(req.params.id);
     if (!taskDeleted) {
       res.status(200).json({ message: "No task is found with id" });
     } else {
-      // const foundUser = await db.User.findById(req.body._id);
-      const foundUser = await db.User.findById(req.user);
+      const foundUser = await db.User.findById(taskDeleted.user);
       foundUser.tasks.remove(taskDeleted._id);
       await foundUser.save();
       res.status(200).json({ task: taskDeleted });

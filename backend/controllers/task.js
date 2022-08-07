@@ -53,7 +53,7 @@ const create = async (req, res) => {
 const update = async (req, res) => {
   try {
     const taskUpdated = await db.Task.findByIdAndUpdate(
-      req.params.id || req._id,
+      req.params.id,
       req.body,
       { new: true }
     );

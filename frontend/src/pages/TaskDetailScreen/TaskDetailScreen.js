@@ -28,7 +28,7 @@ const TaskDetailScreen = (props) => {
     ));
   };
 
-  const displayFilteredTaskDetail = (tasks) => {
+  const displayFilteredTaskDetail = (tasks, userData) => {
     return tasks.map((task) => <TaskDetail key={task._id} data={task} />);
   };
 

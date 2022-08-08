@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import UserModel from "../../models/UserModel";
 import TaskDetail from "../../components/TaskDetail/TaskDetail";
 import ProfileInfoCard from "../../components/ProfileInfoCard/ProfileInfoCard";
+import { Link } from "react-router-dom";
 
 const TaskDetailScreen = (props) => {
   const [usersData, setUsersData] = useState([]);
@@ -35,6 +36,9 @@ const TaskDetailScreen = (props) => {
   return (
     <>
       <div>{displayFilteredUser(usersData)}</div>
+      <div>
+        <Link to={`/users/newtask`}>CREATE A TASK</Link>
+      </div>
       <div>{displayFilteredTaskDetail(taskData)}</div>
     </>
   );

@@ -35,7 +35,6 @@ const show = async (req, res) => {
 // CREATE ROUTE FOR TASK
 const create = async (req, res) => {
   try {
-    console.log(req.body, "req.body");
     const taskCreated = await db.Task.create(req.body);
     const foundUser = await db.User.findById(req.body.user);
     foundUser.tasks.push(taskCreated);

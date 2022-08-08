@@ -6,6 +6,7 @@ import classes from "./DeleteMsgScreen.module.css";
 
 const DeleteMsgScreen = () => {
   const [user, setUser] = useRecoilState(userState);
+  console.log(user);
 
   const logOut = () => {
     setUser(null);

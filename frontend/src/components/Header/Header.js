@@ -33,7 +33,7 @@ const Header = (props) => {
                   <ul className={`${classes["header-navbar"]} `}>
                     <li>
                       <NavLink
-                        to={user ? `/users/${user._id}/edit` : "/"}
+                        to={user.isAdmin ? `/users/admin` : `/users/dashboard`}
                         style={{ textDecoration: "none" }}
                       >
                         {user.name}
@@ -53,7 +53,7 @@ const Header = (props) => {
                   <ul className={classes["header-navbar"]}>
                     <li>
                       <NavLink
-                        to={user ? `/users/${user._id}/edit` : "/"}
+                        to={user.isAdmin ? `/users/admin` : `/users/dashboard`}
                         style={{ textDecoration: "none" }}
                       >
                         {user.name}

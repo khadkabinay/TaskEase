@@ -9,6 +9,7 @@ import { TaskEditScreen } from "../pages/TaskEditScreen/TaskEditScreen";
 import NewTaskScreen from "../pages/NewTaskScreen/NewTaskScreen";
 import TaskDetailScreen from "../pages/TaskDetailScreen/TaskDetailScreen";
 import TaskDeletionScreen from "../pages/TaskDeletionScreen/TaskDeletionScreen";
+import UsersDashboardScreen from "../pages/UsersDashboardScreen/UsersDashboardScreen";
 import LoginScreen from "../pages/LoginScreen/LoginScreen";
 import RegisterScreen from "../pages/RegisterScreen/RegisterScreen";
 import { useRecoilValue } from "recoil";
@@ -34,7 +35,15 @@ const Routes = (props) => {
           <Route exact path="/users/dashboard" component={DashboardScreen} />
           <Route exact path="/users/newtask" component={NewTaskScreen} />
           {user.isAdmin ? (
-            <Route exact path="/users/admin" component={AdminScreen} />
+            <Switch>
+              {" "}
+              <Route exact path="/users/admin" component={AdminScreen} />
+              <Route
+                exact
+                path="/users/admin/allusers"
+                component={UsersDashboardScreen}
+              />
+            </Switch>
           ) : (
             <Route
               path="*"

@@ -59,6 +59,29 @@ const update = async (req, res) => {
     if (!taskUpdated) {
       res.status(200).json({ message: "No task is found" });
     } else {
+      const foundTask = await db.Task.findById(taskUpdated._id);
+      const foundUser = await db.User.findById(foundTask.user)
+        .populate("tasks")
+        .exec();
+
+      // console.log(foundUser.tasks, "tasks");
+      let completed = 0;
+      let inComplete = 0;
+      // await foundUser.tasks.forEach((task) => console.log(task.isCompleted));
+      await foundUser.tasks.forEach((task) => {
+        if (task.isCompleted) {
+          completed++;
+        } else {
+          inComplete++;
+        }
+      });
+
+      await db.User.findByIdAndUpdate(
+        foundUser._id,
+        { completedTask: completed, inCompleteTask: inComplete },
+        { new: true }
+      );
+
       res.status(200).json({ task: taskUpdated });
     }
   } catch (err) {

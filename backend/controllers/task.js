@@ -2,6 +2,24 @@
 const express = require("express");
 const db = require("../models");
 
+const updateChart = async (foundUser) => {
+  let completed = 0;
+  let inComplete = 0;
+  await foundUser.tasks.forEach((task) => {
+    if (task.isCompleted) {
+      completed++;
+    } else {
+      inComplete++;
+    }
+  });
+
+  await db.User.findByIdAndUpdate(
+    foundUser._id,
+    { completedTask: completed, inCompleteTask: inComplete },
+    { new: true }
+  );
+};
+
 // INDEX ROUTE FOR TASK
 const index = async (req, res) => {
   try {
@@ -36,9 +54,13 @@ const show = async (req, res) => {
 const create = async (req, res) => {
   try {
     const taskCreated = await db.Task.create(req.body);
-    const foundUser = await db.User.findById(req.body.user);
+    const foundUser = await db.User.findById(req.body.user)
+      .populate("tasks")
+      .exec();
+
     foundUser.tasks.push(taskCreated);
     await foundUser.save();
+    updateChart(foundUser);
     res.status(201).json({ task: taskCreated });
   } catch (err) {
     return res.status(500).json({
@@ -63,24 +85,7 @@ const update = async (req, res) => {
       const foundUser = await db.User.findById(foundTask.user)
         .populate("tasks")
         .exec();
-
-      // console.log(foundUser.tasks, "tasks");
-      let completed = 0;
-      let inComplete = 0;
-      // await foundUser.tasks.forEach((task) => console.log(task.isCompleted));
-      await foundUser.tasks.forEach((task) => {
-        if (task.isCompleted) {
-          completed++;
-        } else {
-          inComplete++;
-        }
-      });
-
-      await db.User.findByIdAndUpdate(
-        foundUser._id,
-        { completedTask: completed, inCompleteTask: inComplete },
-        { new: true }
-      );
+      updateChart(foundUser);
 
       res.status(200).json({ task: taskUpdated });
     }
@@ -102,6 +107,8 @@ const destroy = async (req, res) => {
       const foundUser = await db.User.findById(taskDeleted.user);
       foundUser.tasks.remove(taskDeleted._id);
       await foundUser.save();
+      updateChart(foundUser);
+
       res.status(200).json({ task: taskDeleted });
     }
   } catch (err) {

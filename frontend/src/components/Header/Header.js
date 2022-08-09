@@ -65,7 +65,7 @@ const Header = (props) => {
                         onClick={logOut}
                         style={{ textDecoration: "none" }}
                       >
-                        Log Out
+                        LogOut
                       </NavLink>
                     </li>
                   </ul>
@@ -80,12 +80,12 @@ const Header = (props) => {
                 </li>
                 <li>
                   <NavLink to={"/login"} style={{ textDecoration: "none" }}>
-                    Login
+                    LogIn
                   </NavLink>{" "}
                 </li>
                 <li>
                   <NavLink to="/register" style={{ textDecoration: "none" }}>
-                    Sign Up
+                    SignUp
                   </NavLink>
                 </li>
               </ul>

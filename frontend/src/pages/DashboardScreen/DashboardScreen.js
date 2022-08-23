@@ -7,6 +7,7 @@ import UserModel from "../../models/UserModel";
 import FontIcon from "../../components/FontIcon/FontIcon";
 import Profile from "../../components/Profile/Profile";
 import DashboardContainer from "../../components/DashboardContainer/DashboardContainer";
+import PieChart from "../../components/PieChart/PieChart";
 import classes from "./DashboardScreen.module.css";
 const DashboardScreen = () => {
   const [user, setUser] = useRecoilState(userState);
@@ -17,11 +18,26 @@ const DashboardScreen = () => {
     });
   }, [setUser]);
 
+  const taskRecord = {
+    labels: [
+      `${user.inCompleteTask} inComplete Tasks`,
+      `${user.completedTask} completed Tasks`,
+    ],
+    datasets: [
+      {
+        label: "Task Tracker",
+        data: [user.inCompleteTask, user.completedTask],
+        backgroundColor: ["#FBDF07", "#224B0C"],
+      },
+    ],
+  };
+
   return (
     <>
       <DashboardContainer>
         <FontIcon icon={faAlignJustify} />
         <Profile data={user} key={user._id} />
+        <PieChart chartData={taskRecord} />
       </DashboardContainer>
     </>
   );

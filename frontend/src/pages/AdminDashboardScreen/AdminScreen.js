@@ -29,12 +29,12 @@ const AdminScreen = () => {
       {
         label: "inComplete Tasks",
         data: userData.map((user) => user.inCompleteTask),
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
+        backgroundColor: "#FBDF07",
       },
       {
         label: "completed Tasks",
         data: userData.map((user) => user.completedTask),
-        backgroundColor: "rgba(53, 162, 235, 0.5)",
+        backgroundColor: "#224B0C",
       },
     ],
   };

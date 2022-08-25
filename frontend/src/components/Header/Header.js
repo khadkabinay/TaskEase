@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import UserModel from "../../models/UserModel";
-import cn from "classnames";
 import { NavLink } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { userState } from "../../recoil/atoms";

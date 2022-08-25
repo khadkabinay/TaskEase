@@ -3,15 +3,11 @@ import UserModel from "../../models/UserModel";
 import { useRecoilState } from "recoil";
 import { userState } from "../../recoil/atoms";
 import { Link } from "react-router-dom";
-import FontIcon from "../../components/FontIcon/FontIcon";
-import { faAlignJustify } from "@fortawesome/free-solid-svg-icons";
 import ProfileInfoCard from "../../components/ProfileInfoCard/ProfileInfoCard";
 import Profile from "../../components/Profile/Profile";
 import DashboardContainer from "../../components/DashboardContainer/DashboardContainer";
 import BarChart from "../../components/BarChart/BarChart";
 import classes from "./AdminScreen.module.css";
-import globalStyles from "../../Assets/global-styles/bootstrap.min.module.css";
-import cn from "classnames";
 
 const AdminScreen = () => {
   const [user, setUser] = useRecoilState(userState);
@@ -39,11 +35,10 @@ const AdminScreen = () => {
     ],
   };
 
+  console.log(userData, "userData");
   return (
     <>
-      <DashboardContainer
-        className={cn(globalStyles.container, classes.customContainer)}
-      >
+      <DashboardContainer>
         <Profile data={user} />
         <Link to={user.isAdmin && `/users/admin/allusers`}>All Users</Link>
         <div>

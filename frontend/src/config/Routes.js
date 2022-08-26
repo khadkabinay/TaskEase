@@ -1,10 +1,9 @@
 import React from "react";
-import { Switch, Route, Navigate } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import HomeScreen from "../pages/HomeScreen/HomeScreen";
 import AdminScreen from "../pages/AdminDashboardScreen/AdminScreen";
 import DashboardScreen from "../pages/DashboardScreen/DashboardScreen";
 import ProfileEditScreen from "../pages/ProfileEditScreen/ProfileEditScreen";
-import DeleteMsgScreen from "../pages/DeleteMsgScreen/DeleteMsgScreen";
 import { TaskEditScreen } from "../pages/TaskEditScreen/TaskEditScreen";
 import NewTaskScreen from "../pages/NewTaskScreen/NewTaskScreen";
 import TaskDetailScreen from "../pages/TaskDetailScreen/TaskDetailScreen";
@@ -16,6 +15,7 @@ import { useRecoilValue } from "recoil";
 import { loggedInState } from "../recoil/selectors";
 import { useRecoilState } from "recoil";
 import { userState } from "../recoil/atoms";
+import UserDeletionScreen from "../pages/UserDeletionScreen/UserDeletionScreen";
 
 const Routes = (props) => {
   const [user, setUser] = useRecoilState(userState);
@@ -29,6 +29,7 @@ const Routes = (props) => {
       {loggedIn && (
         <Switch>
           <Route path="/users/:id/edit" component={ProfileEditScreen} />
+          <Route path="/users/:id/delete" component={UserDeletionScreen} />
           <Route path="/users/:id/taskdetail" component={TaskDetailScreen} />
           <Route path="/users/task/:id/edit" component={TaskEditScreen} />
           <Route path="/users/task/:id/delete" component={TaskDeletionScreen} />
@@ -52,8 +53,6 @@ const Routes = (props) => {
               )}
             />
           )}
-          <Route path="/users/msgscreen" component={DeleteMsgScreen} />
-          {/* <Route path="/tasks/:id/edit" component={EditTask} /> */}
         </Switch>
       )}
       <Route

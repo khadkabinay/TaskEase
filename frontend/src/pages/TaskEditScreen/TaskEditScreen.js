@@ -13,12 +13,6 @@ export const TaskEditScreen = (props) => {
     });
   }, [id, userId]);
 
-  //   useEffect(() => {
-  //     TaskModel.edit(id, { name }).then((data) => {
-  //       console.log("updated");
-  //     });
-  //   }, [id, name]);
-
   const submitHandler = (e) => {
     e.preventDefault();
     TaskModel.edit(id, { name }).then((data) => {

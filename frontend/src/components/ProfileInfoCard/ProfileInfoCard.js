@@ -16,6 +16,9 @@ const ProfileInfoCard = (props) => {
         <Link to={`/users/${_id}/taskdetail`} className={classes.linkSpace}>
           MORE
         </Link>
+        <Link to={`/users/${_id}/delete`} className={classes.linkSpace}>
+          DELETE
+        </Link>
       </div>
     </>
   );

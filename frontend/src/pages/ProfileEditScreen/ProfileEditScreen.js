@@ -12,24 +12,12 @@ const ProfileEditSreen = (props) => {
   const [email, setEmail] = useState(user.email);
   const [image, setImage] = useState(user.image);
   const [phoneNumber, setPhoneNumber] = useState(user.phoneNumber);
-  const [deleteSuccess, setDeleteSuccess] = useState(false);
 
   useEffect(() => {
     UserModel.all().then((data) => {
       setUser(data.data);
     });
   }, [name, username, email, image, phoneNumber, setUser]);
-
-  const destroyProfile = () => {
-    if (window.confirm("would you like to delete your profile?")) {
-      setDeleteSuccess(true);
-      UserModel.destroy(props.match.params.id).then((data) => {
-        props.history.push("/users/msgscreen");
-      });
-    } else {
-      setDeleteSuccess(false);
-    }
-  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -113,12 +101,7 @@ const ProfileEditSreen = (props) => {
         </div>
         <input type="submit" value="UPDATE" />
       </form>
-      <Link
-        onClick={destroyProfile}
-        to={!deleteSuccess ? `/users/${user._id}/edit` : "/users/msgscreen"}
-      >
-        DELETE
-      </Link>
+      <Link to={`/users/${user._id}/delete`}>DELETE</Link>
     </div>
   );
 };

@@ -11,31 +11,30 @@ import classes from "./AdminScreen.module.css";
 
 const AdminScreen = () => {
   const [user, setUser] = useRecoilState(userState);
-  const [userData, setUsersData] = useState([]);
+  const [top3Users, setTop3Users] = useState([]);
 
   useEffect(() => {
     UserModel.all().then((data) => {
-      setUsersData(data.userData);
+      setTop3Users(data.top3);
     });
   }, []);
 
   const taskRecord = {
-    labels: userData !== undefined && userData.map((data) => data.name),
+    labels: top3Users !== undefined && top3Users.map((data) => data.name),
     datasets: [
       {
         label: "inComplete Tasks",
-        data: userData.map((user) => user.inCompleteTask),
+        data: top3Users.map((user) => user.inCompleteTask),
         backgroundColor: "#FBDF07",
       },
       {
         label: "completed Tasks",
-        data: userData.map((user) => user.completedTask),
+        data: top3Users.map((user) => user.completedTask),
         backgroundColor: "#224B0C",
       },
     ],
   };
 
-  console.log(userData, "userData");
   return (
     <>
       <DashboardContainer>
@@ -43,7 +42,7 @@ const AdminScreen = () => {
         <Link to={user.isAdmin && `/users/admin/allusers`}>All Users</Link>
         <div>
           <div>
-            {userData !== undefined ? (
+            {top3Users !== undefined ? (
               <BarChart chartData={taskRecord} />
             ) : (
               <h5>Loading ...plz wait..</h5>

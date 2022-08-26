@@ -11,6 +11,13 @@ const index = async (req, res) => {
     const users = await db.User.find({ isAdmin: false })
       .populate("tasks")
       .exec();
+
+    const top3Users = await db.User.find({ isAdmin: false })
+      .sort({ completedTask: -1 })
+      .limit(3)
+      .populate("tasks")
+      .exec();
+
     const adminInfo = await db.User.find({ isAdmin: true });
     const allUsers = await db.User.find({}).populate("tasks").exec();
     res.status(200).json({
@@ -19,6 +26,7 @@ const index = async (req, res) => {
       adminUser: adminInfo,
       userData: users,
       usersData: allUsers,
+      top3: top3Users,
     });
   } catch (err) {
     return res.status(500).json({

@@ -24,12 +24,12 @@ const Header = (props) => {
     <header>
       <>
         <div className={classes.brand}>
-          <h1 className={classes["brand-name"]}>TASKEASE</h1>
+          <h1 className={classes.brandName}>TASKEASE</h1>
           <div>
             {user ? (
               <div>
                 {user.isAdmin ? (
-                  <ul className={`${classes["header-navbar"]} `}>
+                  <ul className={classes.headerNavbar}>
                     <li>
                       <NavLink
                         to={user.isAdmin ? `/users/admin` : `/users/dashboard`}
@@ -44,12 +44,12 @@ const Header = (props) => {
                         onClick={logOut}
                         style={{ textDecoration: "none" }}
                       >
-                        LogOut
+                        LOG OUT
                       </NavLink>
                     </li>
                   </ul>
                 ) : (
-                  <ul className={classes["header-navbar"]}>
+                  <ul className={classes.headerNavbar}>
                     <li>
                       <NavLink
                         to={user.isAdmin ? `/users/admin` : `/users/dashboard`}
@@ -64,27 +64,27 @@ const Header = (props) => {
                         onClick={logOut}
                         style={{ textDecoration: "none" }}
                       >
-                        LogOut
+                        LOG OUT
                       </NavLink>
                     </li>
                   </ul>
                 )}
               </div>
             ) : (
-              <ul className={classes["header-navbar"]}>
+              <ul className={classes.headerNavbar}>
                 <li>
                   <NavLink to="/" style={{ textDecoration: "none" }}>
-                    Home
+                    HOME
                   </NavLink>
                 </li>
                 <li>
                   <NavLink to={"/login"} style={{ textDecoration: "none" }}>
-                    LogIn
+                    LOG IN
                   </NavLink>{" "}
                 </li>
                 <li>
                   <NavLink to="/register" style={{ textDecoration: "none" }}>
-                    SignUp
+                    SIGN UP
                   </NavLink>
                 </li>
               </ul>

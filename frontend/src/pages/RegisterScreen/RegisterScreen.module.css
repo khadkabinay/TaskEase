@@ -1,23 +1,37 @@
-.RegisterCard {
+/* style for register container */
+.registerCard {
   position: absolute;
-  min-width: 250px;
+  min-width: 300px;
   left: 30%;
-  top: 70px;
-  background-color: #e8e8e8;
-  padding: 20px;
+  top: 20%;
+  background-color: #a9e297;
+  padding: 30px;
   font-weight: bold;
   border-radius: 10px;
   box-shadow: 0 20px 30px 0 #7e7878;
+  text-align: center;
 }
 
-.RegisterBtn {
-  background-color: #7fc579;
+/* style for input*/
+input {
+  font-size: larger;
+  text-align: center;
+  margin-top: 10px;
+  padding: 10px;
+  color: black;
+}
+
+/* style for submit button*/
+.registerBtn {
+  background-color: blue;
+  color: white;
   border-radius: 5px;
   border: none;
-  padding: 10px;
-  font-size: 20px;
+  padding: 10px 30px 10px 30px;
+  font-size: larger;
 }
 
-.RegisterBtn:hover {
+/* style when hover*/
+.registerBtn:hover {
   background-color: green;
 }

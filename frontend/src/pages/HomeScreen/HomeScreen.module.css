@@ -1,19 +1,31 @@
 /* HOME PAGE STYLE */
-
-.taskTitle {
-  background-color: rgba(154, 212, 61, 0.6);
-  padding: 30px;
-  width: 100%;
-  color: red;
-  font-size: 3em;
-  border-radius: 5px;
-  box-shadow: 4px 10px 10px 0px rgba(154, 212, 61, 0.2);
+.homePageStyle {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 50px auto auto;
+  font-size: xx-large;
+  text-align: center;
+  font-style: italic;
+  font-weight: bold;
+  color: coral;
+  padding: 10px;
 }
 
-.homePage {
-  background-image: url("../../Assets/images/taskmg.jpg");
-  height: 90vh;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+img {
+  width: 100%;
+  border-radius: 5px;
+}
+.imgStyle {
+  position: relative;
+}
+
+.imgTextStyle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(232, 9, 184);
+  background-color: aqua;
+  padding: 10px;
+  border-radius: 5px;
 }

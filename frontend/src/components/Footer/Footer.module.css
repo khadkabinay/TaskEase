@@ -1,9 +1,10 @@
-.footer-bar {
-  background-color: #622985;
+.footerBar {
+  background-color: #211e22;
   opacity: 0.5;
-  height: 10vh;
-  color: rgb(249, 244, 244);
+  color: #ec7433;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
+  font-size: larger;
+  padding: 20px;
 }

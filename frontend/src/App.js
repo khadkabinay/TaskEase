@@ -5,9 +5,9 @@ import classes from "./App.module.css";
 
 function App() {
   return (
-    <div className={`${classes.App}`}>
-      <Header />
-      <Routes />
+    <div className={`${classes.appContainer}`}>
+      <Header className={`${classes.appHeader}`} />
+      <Routes className={`${classes.appContent}`} />
     </div>
   );
 }

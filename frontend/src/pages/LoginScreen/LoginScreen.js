@@ -33,38 +33,33 @@ function LoginScreen(props) {
   }
 
   return (
-    <div
-      className={`card form-group ${classes.logForm}`}
-      style={{ width: "20%" }}
-    >
-      <h2>Login</h2>
+    <div className={classes.logForm} style={{ width: "30%" }}>
+      <h2>LOG IN</h2>
       {error && <p style={{ color: "red" }}>{error}</p>}
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="email" className="d-inline">
-            Email
+          <label htmlFor="email">
+            <input
+              type="text"
+              name="email"
+              placeholder="Email"
+              className={classes.inputDiv}
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+            />
           </label>
-          <input
-            type="text"
-            name="email"
-            className="form-control"
-            placeholder="Email"
-            onChange={(e) => setEmail(e.target.value)}
-            value={email}
-          />
         </div>
         <div>
-          <label htmlFor="password" className="d-inline">
-            Password
+          <label htmlFor="password">
+            <input
+              type="password"
+              name="password"
+              placeholder="password"
+              className={classes.inputDiv}
+              onChange={(e) => setPassword(e.target.value)}
+              value={password}
+            />
           </label>
-          <input
-            type="password"
-            name="password"
-            className="form-control"
-            placeholder="password"
-            onChange={(e) => setPassword(e.target.value)}
-            value={password}
-          />
         </div>
 
         <input type="submit" value="Login" className={classes.logBtn} />

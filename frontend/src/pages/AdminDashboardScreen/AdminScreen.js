@@ -3,7 +3,6 @@ import UserModel from "../../models/UserModel";
 import { useRecoilState } from "recoil";
 import { userState } from "../../recoil/atoms";
 import { Link } from "react-router-dom";
-import ProfileInfoCard from "../../components/ProfileInfoCard/ProfileInfoCard";
 import Profile from "../../components/Profile/Profile";
 import DashboardContainer from "../../components/DashboardContainer/DashboardContainer";
 import BarChart from "../../components/BarChart/BarChart";
@@ -23,12 +22,12 @@ const AdminScreen = () => {
     labels: top3Users !== undefined && top3Users.map((data) => data.name),
     datasets: [
       {
-        label: "inComplete Tasks",
+        label: "InComplete Tasks",
         data: top3Users.map((user) => user.inCompleteTask),
         backgroundColor: "#FBDF07",
       },
       {
-        label: "completed Tasks",
+        label: "Completed Tasks",
         data: top3Users.map((user) => user.completedTask),
         backgroundColor: "#224B0C",
       },
@@ -37,19 +36,19 @@ const AdminScreen = () => {
 
   return (
     <>
-      <DashboardContainer>
-        <Profile data={user} />
-        <Link to={user.isAdmin && `/users/admin/allusers`}>All Users</Link>
+      <div className={classes.adminPageContainer}>
         <div>
-          <div>
-            {top3Users !== undefined ? (
-              <BarChart chartData={taskRecord} />
-            ) : (
-              <h5>Loading ...plz wait..</h5>
-            )}
-          </div>
+          <Profile data={user} />
+          <Link to={user.isAdmin && `/users/admin/allusers`}>All Users</Link>
         </div>
-      </DashboardContainer>
+        <div>
+          {top3Users !== undefined ? (
+            <BarChart chartData={taskRecord} />
+          ) : (
+            <h5>Loading ...plz wait..</h5>
+          )}
+        </div>
+      </div>
     </>
   );
 };

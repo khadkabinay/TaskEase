@@ -1,8 +1,7 @@
-/* USERLIST STYLES */
-.customContainer {
-  display: flex;
-}
-
-.itemSpace {
-  margin-right: 50px;
+/* styles adminScreen */
+.adminPageContainer {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-auto-rows: auto;
+  grid-gap: 30px;
 }

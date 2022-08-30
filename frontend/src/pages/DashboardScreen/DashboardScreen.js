@@ -4,7 +4,6 @@ import { userState } from "../../recoil/atoms";
 import { Link } from "react-router-dom";
 import UserModel from "../../models/UserModel";
 import Profile from "../../components/Profile/Profile";
-import DashboardContainer from "../../components/DashboardContainer/DashboardContainer";
 import PieChart from "../../components/PieChart/PieChart";
 import classes from "./DashboardScreen.module.css";
 
@@ -19,8 +18,8 @@ const DashboardScreen = () => {
 
   const taskRecord = {
     labels: [
-      `${user.inCompleteTask} inComplete Tasks`,
-      `${user.completedTask} completed Tasks`,
+      `${user.inCompleteTask} InComplete Tasks`,
+      `${user.completedTask} Completed Tasks`,
     ],
     datasets: [
       {
@@ -33,10 +32,10 @@ const DashboardScreen = () => {
 
   return (
     <>
-      <DashboardContainer>
+      <div className={classes.dashboardPageContainer}>
         <Profile data={user} key={user._id} />
         <PieChart chartData={taskRecord} />
-      </DashboardContainer>
+      </div>
     </>
   );
 };

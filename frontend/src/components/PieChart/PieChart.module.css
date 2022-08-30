@@ -1,3 +1,6 @@
 .pieChart {
-  width: 800px;
+  width: 50%;
+  border: 2px solid red;
+  padding: 15px;
+  text-align: center;
 }

@@ -1,0 +1,23 @@
+.deletionMsgBox {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: brown;
+  color: white;
+  text-align: center;
+  padding: 40px;
+  border-radius: 50%;
+}
+
+.confirmBtn {
+  color: red;
+}
+
+.deletionMsgBox button {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.deletionMsgBox button:hover {
+  background-color: burlywood;
+}

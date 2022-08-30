@@ -4,6 +4,7 @@ import Button from "../../components/Button/Button";
 import { Link } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { userState } from "../../recoil/atoms";
+import classes from "./ProfileEditScreen.module.css";
 
 const ProfileEditSreen = (props) => {
   const [user, setUser] = useRecoilState(userState);
@@ -38,70 +39,78 @@ const ProfileEditSreen = (props) => {
   };
 
   return (
-    <div style={{ width: "30%" }}>
-      <Button>
-        <Link
-          to={user.isAdmin ? "/users/admin" : "/users/dashboard"}
-          style={{ textDecoration: "none" }}
-        >
-          GO BACK
-        </Link>
-      </Button>
-      <h2>UPDATE PROFILE</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="name">Name</label>
+    <div className={classes.profileEditForm}>
+      <div>
+        <Button>
+          <Link
+            to={user.isAdmin ? "/users/admin" : "/users/dashboard"}
+            style={{ textDecoration: "none" }}
+          >
+            GO BACK
+          </Link>
+        </Button>
+
+        <h2>UPDATE PROFILE</h2>
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label htmlFor="name">Name</label>
+            <input
+              type="text"
+              name="name"
+              onChange={(e) => setName(e.target.value)}
+              value={name}
+            />
+          </div>
+          <div>
+            <label htmlFor="username">Username</label>
+            <input
+              type="text"
+              name="username"
+              onChange={(e) => setUsername(e.target.value)}
+              value={username}
+            />
+          </div>
+          <div>
+            <label htmlFor="email">Email</label>
+            <input
+              type="text"
+              name="email"
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+            />
+          </div>
+          <div>
+            <label htmlFor="image">Image</label>
+            <input
+              type="text"
+              name="image"
+              onChange={(e) => setImage(e.target.value)}
+              value={image}
+            />
+          </div>
+          <div>
+            <label htmlFor="phoneNumber">Phone number</label>
+            <input
+              type="Number"
+              name="phoneNumber"
+              onChange={(e) => setPhoneNumber(e.target.value)}
+              value={phoneNumber}
+            />
+          </div>
           <input
-            type="text"
-            name="name"
-            className="form-control"
-            onChange={(e) => setName(e.target.value)}
-            value={name}
+            type="submit"
+            value="UPDATE"
+            className={classes.formSubmitBtn}
           />
-        </div>
-        <div className="form-group">
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
-            name="username"
-            className="form-control"
-            onChange={(e) => setUsername(e.target.value)}
-            value={username}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
-          <input
-            type="text"
-            name="email"
-            className="form-control"
-            onChange={(e) => setEmail(e.target.value)}
-            value={email}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="image">Image</label>
-          <input
-            type="text"
-            name="image"
-            className="form-control"
-            onChange={(e) => setImage(e.target.value)}
-            value={image}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="phoneNumber">Phone number</label>
-          <input
-            type="Number"
-            name="phoneNumber"
-            className="form-control"
-            onChange={(e) => setPhoneNumber(e.target.value)}
-            value={phoneNumber}
-          />
-        </div>
-        <input type="submit" value="UPDATE" />
-      </form>
-      <Link to={`/users/${user._id}/delete`}>DELETE</Link>
+        </form>
+      </div>
+      <div className={classes.deleteBtn}>
+        <Button>
+          <Link to={`/users/${user._id}/delete`} className={classes.deleteLink}>
+            DELETE
+          </Link>
+        </Button>
+      </div>
     </div>
   );
 };

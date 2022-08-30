@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import TaskModel from "../../models/TaskModel";
+import classes from "./TaskDeletionScreen.module.css";
 
 const TaskDeletionScreen = (props) => {
   const [userId, setUserId] = useState("");
@@ -21,14 +22,20 @@ const TaskDeletionScreen = (props) => {
   };
 
   return (
-    <div>
+    <div className={classes.deletionMsgBox}>
       <h1>Please ,confirm to delete it !</h1>
-      <button type="button" onClick={removeTask}>
-        Confirm
-      </button>
-      <button type="button" onClick={cancelTask}>
-        Cancel
-      </button>
+      <div>
+        <button
+          type="button"
+          onClick={removeTask}
+          className={classes.confirmBtn}
+        >
+          Confirm
+        </button>
+        <button type="button" onClick={cancelTask}>
+          Cancel
+        </button>
+      </div>
     </div>
   );
 };

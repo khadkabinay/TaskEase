@@ -1,5 +1,17 @@
-.cardWidth {
-  width: 20%;
+/* styles profile */
+
+.profileCard {
+  width: 60%;
+  background-color: rgb(248, 244, 244);
+  padding: 20px;
+  margin: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+img {
+  width: 50%;
+  height: 50%;
 }
 
 .linkSpace {

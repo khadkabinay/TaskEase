@@ -7,11 +7,11 @@ const Profile = (props) => {
 
   return (
     <>
-      <div>
+      <div className={classes.profileCard}>
         <img src={image} alt={"profile"} />
         <div>
-          <h5>{name}</h5>
-          <h5>{email}</h5>
+          <h2>{name}</h2>
+          <h2>{email}</h2>
           <Link to={`/users/${_id}/edit`} className={classes.linkSpace}>
             UPDATE
           </Link>

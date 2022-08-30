@@ -4,6 +4,7 @@ import UserModel from "../../models/UserModel";
 import { useRecoilState } from "recoil";
 import { userState } from "../../recoil/atoms";
 import { useHistory } from "react-router-dom";
+import classes from "./NewTask.module.css";
 
 const NewTask = (props) => {
   const [logInUser, setLogInUser] = useRecoilState(userState);
@@ -36,15 +37,14 @@ const NewTask = (props) => {
   };
 
   return (
-    <div>
+    <div className={classes.newTaskBox}>
       <form onSubmit={handleSubmit}>
-        <div className="form-group">
+        <div>
           <label htmlFor="name">Task</label>
           <input
             type="text"
             name="name"
-            className="form-control"
-            placeholder="Task"
+            placeholder="Write your task !"
             onChange={(e) => setName(e.target.value)}
             value={name}
           />
@@ -57,44 +57,31 @@ const NewTask = (props) => {
                 <h2>Loading ...</h2>
               ) : (
                 <div>
-                  <label>
-                    Asign a Task
-                    <select
-                      name="user"
-                      onChange={(e) => setUser(e.target.value)}
-                      className="form-control"
-                    >
-                      <option>Choose Name</option>
-                      <option value={adminUser[0]._id}>
-                        {adminUser[0].name}
-                      </option>
-                    </select>
-                  </label>
+                  <label>Who do you want to asign to ?</label>
+                  <select name="user" onChange={(e) => setUser(e.target.value)}>
+                    <option>Asign to admin</option>
+                    <option value={adminUser[0]._id}>
+                      {adminUser[0].name}
+                    </option>
+                  </select>
                 </div>
               )}
             </div>
           ) : (
             <div>
-              <label>
-                Asign a Task
-                <select
-                  name="user"
-                  onChange={(e) => setUser(e.target.value)}
-                  className="form-control"
-                >
-                  <option>Choose Name</option>
-                  {userData.map((user) => (
-                    <option value={user._id} key={user._id}>
-                      {user.name}
-                    </option>
-                  ))}
-                </select>
-              </label>
+              <label>Who do you want to asign to ?</label>
+              <select name="user" onChange={(e) => setUser(e.target.value)}>
+                <option>Choose Name</option>
+                {userData.map((user) => (
+                  <option value={user._id} key={user._id}>
+                    {user.name}
+                  </option>
+                ))}
+              </select>
             </div>
           )}
         </div>
-
-        <button type="submit" value="Add Task" className="fas fa-pen">
+        <button type="submit" value="Add Task">
           Add Task
         </button>
       </form>

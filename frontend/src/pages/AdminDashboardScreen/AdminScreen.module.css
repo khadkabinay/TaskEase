@@ -5,3 +5,7 @@
   grid-auto-rows: auto;
   grid-gap: 30px;
 }
+
+.linkStyle {
+  text-align: center;
+}

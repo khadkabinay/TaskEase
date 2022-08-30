@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import UserModel from "../../models/UserModel";
 import { useRecoilState } from "recoil";
 import { userState } from "../../recoil/atoms";
+import classes from "./UserDeletionScreen.module.css";
 
 const TaskDeletionScreen = (props) => {
   const [logInUser, setLogInUser] = useRecoilState(userState);
@@ -35,14 +36,20 @@ const TaskDeletionScreen = (props) => {
   };
 
   return (
-    <div>
+    <div className={classes.deletionMsgBox}>
       <h1>Please, Confirm to delete this profile !</h1>
-      <button type="button" onClick={removeUser}>
-        Confirm
-      </button>
-      <button type="button" onClick={cancelUserDeletion}>
-        Cancel
-      </button>
+      <div>
+        <button
+          type="button"
+          onClick={removeUser}
+          className={classes.confirmBtn}
+        >
+          Confirm
+        </button>
+        <button type="button" onClick={cancelUserDeletion}>
+          Cancel
+        </button>
+      </div>
     </div>
   );
 };

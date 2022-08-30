@@ -5,7 +5,8 @@ import classes from "./PieChart.module.css";
 
 const PieChart = (props) => {
   return (
-    <div className={classes.PieChart}>
+    <div className={classes.pieChart}>
+      <h1>Progress Tracker</h1>
       <Pie data={props.chartData} />
     </div>
   );

@@ -4,7 +4,6 @@ import { useRecoilState } from "recoil";
 import { userState } from "../../recoil/atoms";
 import { Link } from "react-router-dom";
 import Profile from "../../components/Profile/Profile";
-import DashboardContainer from "../../components/DashboardContainer/DashboardContainer";
 import BarChart from "../../components/BarChart/BarChart";
 import classes from "./AdminScreen.module.css";
 
@@ -37,7 +36,7 @@ const AdminScreen = () => {
   return (
     <>
       <div className={classes.adminPageContainer}>
-        <div>
+        <div className={classes.linkStyle}>
           <Profile data={user} />
           <Link to={user.isAdmin && `/users/admin/allusers`}>All Users</Link>
         </div>

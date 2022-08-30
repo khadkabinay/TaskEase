@@ -1,0 +1,35 @@
+.newTaskBox {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  background-color: aquamarine;
+  justify-items: center;
+  padding: 70px;
+  text-align: center;
+}
+
+.newTaskBox input {
+  margin: 10px;
+}
+
+.newTaskBox select {
+  padding: 15px;
+  font-size: large;
+}
+
+.newTaskBox label {
+  display: block;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.newTaskBox button {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: larger;
+}
+.newTaskBox button:hover {
+  background-color: blueviolet;
+  color: white;
+}

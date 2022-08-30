@@ -1,0 +1,41 @@
+.profileEditForm {
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: center;
+  background-color: rebeccapurple;
+  width: 50%;
+  transform: translate(20%, 0%);
+  padding: 50px;
+}
+
+.profileEditForm label {
+  display: block;
+  font-size: larger;
+  color: white;
+}
+
+.formSubmitBtn {
+  display: inline;
+  padding-right: 40px;
+  padding-left: 40px;
+}
+
+.formSubmitBtn:hover {
+  background-color: blue;
+  color: white;
+}
+
+.deleteBtn {
+  margin-top: 20px;
+}
+
+.deleteLink {
+  color: red;
+  font-size: large;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.deleteBtn button {
+  padding: 10px;
+}

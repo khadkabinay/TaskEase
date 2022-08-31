@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import UserModel from "../../models/UserModel";
 import ProfileInfoCard from "../../components/ProfileInfoCard/ProfileInfoCard";
+import classes from "./UsersDashboardScreen.module.css";
 
 const UsersDashboardScreen = () => {
   const [userData, setUsersData] = useState([]);
@@ -16,7 +17,9 @@ const UsersDashboardScreen = () => {
       return <ProfileInfoCard key={user._id} data={user} />;
     });
   };
-  return <div>{displayUserInfo(userData)}</div>;
+  return (
+    <div className={classes.allUserStyleBox}>{displayUserInfo(userData)}</div>
+  );
 };
 
 export default UsersDashboardScreen;

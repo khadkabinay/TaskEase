@@ -1,7 +1,10 @@
 .taskDetailCard {
+  display: grid;
+  justify-items: center;
+  justify-self: center;
   padding: 10px;
   background-color: pink;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 .btnGroupStyle {

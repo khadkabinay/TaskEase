@@ -3,6 +3,7 @@ import UserModel from "../../models/UserModel";
 import TaskDetail from "../../components/TaskDetail/TaskDetail";
 import ProfileInfoCard from "../../components/ProfileInfoCard/ProfileInfoCard";
 import { Link } from "react-router-dom";
+import classes from "./TaskDetailScreen.module.css";
 
 const TaskDetailScreen = (props) => {
   const [usersData, setUsersData] = useState([]);
@@ -34,13 +35,15 @@ const TaskDetailScreen = (props) => {
   };
 
   return (
-    <>
+    <div className={classes.taskDetailPageBox}>
       <div>{displayFilteredUser(usersData)}</div>
+      <div className={classes.taskDetailPageBox}>
+        {displayFilteredTaskDetail(taskData)}
+      </div>
       <div>
         <Link to={`/users/newtask`}>CREATE A TASK</Link>
       </div>
-      <div>{displayFilteredTaskDetail(taskData)}</div>
-    </>
+    </div>
   );
 };
 

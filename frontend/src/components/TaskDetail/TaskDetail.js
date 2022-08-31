@@ -21,8 +21,8 @@ const TaskDetail = (props) => {
 
   return (
     <>
-      <div className={`${classes.taskDetailCard} ${classes.btnStyle}`}>
-        {name}{" "}
+      <div className={classes.taskDetailCard}>
+        {name}
         <label>
           <input
             name="isDone"

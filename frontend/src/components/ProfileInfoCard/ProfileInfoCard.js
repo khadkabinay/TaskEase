@@ -7,18 +7,20 @@ const ProfileInfoCard = (props) => {
 
   return (
     <>
-      <div>
-        <img src={image} alt={"profile"} />
+      <div className={classes.profileInfoBox}>
         <div>
-          <h5>{name}</h5>
-          <h5>{email}</h5>
+          <img src={image} alt={"profile"} />
+          <h3>{name}</h3>
+          <h3>{email}</h3>
         </div>
-        <Link to={`/users/${_id}/taskdetail`} className={classes.linkSpace}>
-          MORE
-        </Link>
-        <Link to={`/users/${_id}/delete`} className={classes.linkSpace}>
-          DELETE
-        </Link>
+        <div className={classes.linkStyleBtn}>
+          <Link to={`/users/${_id}/taskdetail`} className={classes.linkStyle}>
+            MORE
+          </Link>
+          <Link to={`/users/${_id}/delete`} className={classes.linkStyleDelete}>
+            DELETE
+          </Link>
+        </div>
       </div>
     </>
   );

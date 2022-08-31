@@ -1,0 +1,4 @@
+.allUserStyleBox {
+  display: flex;
+  justify-content: space-evenly;
+}

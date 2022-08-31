@@ -1,0 +1,9 @@
+.taskEditBox {
+  display: grid;
+  background-color: chartreuse;
+  text-align: center;
+  width: max-content;
+  padding: 40px;
+  justify-self: center;
+  border-radius: 10px;
+}

@@ -40,7 +40,7 @@ function Register(props) {
             <input
               type="text"
               name="name"
-              placeholder="name"
+              placeholder="Name"
               onChange={(e) => setName(e.target.value)}
               value={name}
             />
@@ -51,7 +51,7 @@ function Register(props) {
           <input
             type="text"
             name="username"
-            placeholder="username"
+            placeholder="Username"
             className="form-control"
             onChange={(e) => setUsername(e.target.value)}
             value={username}
@@ -62,7 +62,7 @@ function Register(props) {
           <input
             type="text"
             name="email"
-            placeholder="email"
+            placeholder="Email"
             onChange={(e) => setEmail(e.target.value)}
             value={email}
           />
@@ -72,7 +72,7 @@ function Register(props) {
           <input
             type="text"
             name="image"
-            placeholder="image"
+            placeholder="Image URL"
             onChange={(e) => setImage(e.target.value)}
             value={image}
           />
@@ -82,7 +82,7 @@ function Register(props) {
           <input
             type="password"
             name="password"
-            placeholder="password"
+            placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
             value={password}
           />
@@ -92,7 +92,7 @@ function Register(props) {
           <input
             type="text"
             name="phoneNumber"
-            placeholder="phone Number"
+            placeholder="Phone Number"
             onChange={(e) => setPhoneNumer(e.target.value)}
             value={phoneNumber}
           />

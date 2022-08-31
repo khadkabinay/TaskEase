@@ -54,7 +54,7 @@ function LoginScreen(props) {
             <input
               type="password"
               name="password"
-              placeholder="password"
+              placeholder="Password"
               className={classes.inputDiv}
               onChange={(e) => setPassword(e.target.value)}
               value={password}

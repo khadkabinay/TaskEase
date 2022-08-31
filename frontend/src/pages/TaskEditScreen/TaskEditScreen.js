@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import TaskModel from "../../models/TaskModel";
+import classes from "./TaskEditScreen.module.css";
 
 export const TaskEditScreen = (props) => {
   const id = props.match.params.id;
@@ -21,7 +22,7 @@ export const TaskEditScreen = (props) => {
   };
 
   return (
-    <div>
+    <div className={classes.taskEditBox}>
       <h2>UPDATE</h2>
       <form onSubmit={submitHandler}>
         <div>

@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import Profile from "../../components/Profile/Profile";
 import BarChart from "../../components/BarChart/BarChart";
 import classes from "./AdminScreen.module.css";
+import * as BsIcons from "react-icons/bs";
 
 const AdminScreen = () => {
   const [user, setUser] = useRecoilState(userState);
@@ -38,7 +39,14 @@ const AdminScreen = () => {
       <div className={classes.adminPageContainer}>
         <div className={classes.linkStyle}>
           <Profile data={user} />
-          <Link to={user.isAdmin && `/users/admin/allusers`}>All Users</Link>
+          <Link to={user.isAdmin && `/users/admin/allusers`}>
+            <div className={classes.moreAboutUserBtn}>
+              <h2>DETAILS</h2>
+              <h2>
+                <BsIcons.BsPeopleFill />
+              </h2>
+            </div>
+          </Link>
         </div>
         <div>
           {top3Users !== undefined ? (

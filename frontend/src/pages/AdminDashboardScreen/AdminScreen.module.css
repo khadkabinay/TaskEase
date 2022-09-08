@@ -7,5 +7,21 @@
 }
 
 .linkStyle {
-  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  justify-items: center;
+}
+
+.moreAboutUserBtn {
+  display: flex;
+  width: 100%;
+  margin-top: 2em;
+  color: rgb(244, 124, 4);
+  text-decoration: none;
+  padding: 10px;
+  letter-spacing: 2px;
+  background-color: aqua;
+  justify-content: space-evenly;
+  border-radius: 10px;
 }

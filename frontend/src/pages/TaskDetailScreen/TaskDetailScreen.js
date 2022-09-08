@@ -3,6 +3,7 @@ import UserModel from "../../models/UserModel";
 import TaskDetail from "../../components/TaskDetail/TaskDetail";
 import ProfileInfoCard from "../../components/ProfileInfoCard/ProfileInfoCard";
 import { Link } from "react-router-dom";
+import * as Ionicons from "react-icons/io5";
 import classes from "./TaskDetailScreen.module.css";
 
 const TaskDetailScreen = (props) => {
@@ -35,13 +36,15 @@ const TaskDetailScreen = (props) => {
   };
 
   return (
-    <div className={classes.taskDetailPageBox}>
+    <div className={classes.taskDetailPage}>
       <div>{displayFilteredUser(usersData)}</div>
-      <div className={classes.taskDetailPageBox}>
-        {displayFilteredTaskDetail(taskData)}
-      </div>
       <div>
-        <Link to={`/users/newtask`}>CREATE A TASK</Link>
+        <div className={classes.createLinkStyle}>
+          <Link to={`/users/newtask`}>
+            <Ionicons.IoCreateOutline />
+          </Link>
+        </div>
+        <div>{displayFilteredTaskDetail(taskData)}</div>
       </div>
     </div>
   );

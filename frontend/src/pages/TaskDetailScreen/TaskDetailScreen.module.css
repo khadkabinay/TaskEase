@@ -1,8 +1,11 @@
-.taskDetailPageBox {
+.taskDetailPage {
   display: grid;
   grid-template-columns: 1fr 2fr;
+  padding: 3em;
 }
 
-.taskDetailStyleBox {
+.createLinkStyle {
   display: flex;
+  font-size: 3em;
+  color: rgb(226, 43, 43);
 }

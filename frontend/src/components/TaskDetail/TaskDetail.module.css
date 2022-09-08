@@ -1,22 +1,24 @@
 .taskDetailCard {
   display: grid;
-  justify-items: center;
-  justify-self: center;
-  padding: 10px;
-  background-color: pink;
-  margin-bottom: 6px;
+  grid-template-columns: 1fr 1fr;
+  background-color: rgb(180, 247, 149);
+  padding: 1em;
+  margin-bottom: 10px;
+  justify-content: space-around;
+  border-radius: 1em;
 }
 
-.btnGroupStyle {
-  display: block;
+.taskDetailCard span {
+  padding: 10px;
+}
+
+.createIconStyle {
+  color: blue;
+  margin-right: 8px;
   padding: 5px;
 }
 
-.btnStyle {
-  margin: 10px;
-  border-radius: 5px;
-}
-
-.linkStyle {
-  text-decoration: none;
+.deleteIconStyle {
+  color: red;
+  padding: 5px;
 }

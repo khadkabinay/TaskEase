@@ -5,6 +5,7 @@ import TaskModel from "../../models/TaskModel";
 import TaskDeletionScreen from "../../pages/TaskDeletionScreen/TaskDeletionScreen";
 import { useRecoilState } from "recoil";
 import { userState } from "../../recoil/atoms";
+import * as AntIcons from "react-icons/ai";
 
 const TaskDetail = (props) => {
   const [user, setUser] = useRecoilState(userState);
@@ -22,30 +23,28 @@ const TaskDetail = (props) => {
   return (
     <>
       <div className={classes.taskDetailCard}>
-        {name}
-        <label>
-          <input
-            name="isDone"
-            type="checkbox"
-            checked={isDone}
-            onChange={submitHadler}
-          />
-        </label>
-        <div className={classes.btnGroupStyle}>
-          <button type="button" className={classes.btnStyle}>
-            <Link to={`/users/task/${_id}/edit`} className={classes.linkStyle}>
-              UPDATE
-            </Link>
-          </button>
+        <div>
+          <h2>
+            {name}
+            <span>
+              <input
+                name="isDone"
+                type="checkbox"
+                checked={isDone}
+                onChange={submitHadler}
+              />
+            </span>
+          </h2>
+        </div>
+        <div>
+          <Link to={`/users/task/${_id}/edit`}>
+            <AntIcons.AiFillEdit className={classes.createIconStyle} />
+          </Link>
+
           {user.isAdmin && (
-            <button type="button" className={classes.btnStyle}>
-              <Link
-                to={`/users/task/${_id}/delete`}
-                className={classes.linkStyle}
-              >
-                DELETE
-              </Link>
-            </button>
+            <Link to={`/users/task/${_id}/delete`}>
+              <AntIcons.AiTwotoneDelete className={classes.deleteIconStyle} />
+            </Link>
           )}
         </div>
       </div>

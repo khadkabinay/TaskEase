@@ -1,6 +1,15 @@
 .barChart {
   width: 1000px;
   border: 2px solid red;
-  padding: 15px;
   text-align: center;
+  padding: 15px;
+}
+
+@media (max-width: 900px) {
+  .barChart {
+    width: 800px;
+    text-align: center;
+    padding: 2px;
+    margin-top: 10px;
+  }
 }

@@ -1,6 +1,13 @@
 .pieChart {
-  width: 50%;
-  border: 2px solid red;
-  padding: 15px;
+  width: 55%;
+  border: 2px solid rgb(0, 255, 255);
+  padding: 20px;
   text-align: center;
+  margin-top: 15px;
+}
+
+@media (max-width: 900px) {
+  .pieChart {
+    width: 80%;
+  }
 }

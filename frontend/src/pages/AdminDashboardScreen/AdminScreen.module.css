@@ -4,6 +4,7 @@
   grid-template-columns: 1fr 2fr;
   grid-auto-rows: auto;
   grid-gap: 30px;
+  padding: 10px;
 }
 
 .linkStyle {
@@ -30,5 +31,6 @@
   .adminPageContainer {
     display: grid;
     grid-template-columns: 1fr;
+    justify-items: center;
   }
 }

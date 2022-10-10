@@ -2,3 +2,10 @@
   display: flex;
   justify-content: space-evenly;
 }
+
+@media (max-width: 900px) {
+  .allUserStyleBox {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}

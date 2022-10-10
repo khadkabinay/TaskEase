@@ -35,3 +35,11 @@ input {
 .registerBtn:hover {
   background-color: green;
 }
+
+@media (max-width: 900px) {
+  .registerCard {
+    position: absolute;
+    left: 2.5%;
+    top: 30%;
+  }
+}

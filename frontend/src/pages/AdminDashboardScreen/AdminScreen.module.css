@@ -25,3 +25,10 @@
   justify-content: space-evenly;
   border-radius: 10px;
 }
+
+@media (max-width: 900px) {
+  .adminPageContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}

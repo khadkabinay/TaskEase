@@ -35,7 +35,7 @@ const Header = (props) => {
                         to={user.isAdmin ? `/users/admin` : `/users/dashboard`}
                         style={{ textDecoration: "none" }}
                       >
-                        {user.name}
+                        {user.name.toUpperCase()}
                       </NavLink>
                     </li>
                     <li>
@@ -55,7 +55,7 @@ const Header = (props) => {
                         to={user.isAdmin ? `/users/admin` : `/users/dashboard`}
                         style={{ textDecoration: "none" }}
                       >
-                        {user.name}
+                        {user.name.toUpperCase()}
                       </NavLink>
                     </li>
                     <li>

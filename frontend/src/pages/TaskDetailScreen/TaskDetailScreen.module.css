@@ -9,3 +9,10 @@
   font-size: 3em;
   color: rgb(226, 43, 43);
 }
+
+@media (max-width: 900px) {
+  .taskDetailPage {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}

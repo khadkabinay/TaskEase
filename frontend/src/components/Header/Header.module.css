@@ -21,3 +21,16 @@
   text-decoration: none;
   font-size: 1.5em;
 }
+
+@media (max-width: 900px) {
+  .brand {
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .headerNavbar {
+    display: flex;
+    flex-direction: row;
+  }
+}

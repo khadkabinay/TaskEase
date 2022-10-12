@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import classes from "./TaskDetail.module.css";
 import { Link } from "react-router-dom";
 import TaskModel from "../../models/TaskModel";
-import TaskDeletionScreen from "../../pages/TaskDeletionScreen/TaskDeletionScreen";
 import { useRecoilState } from "recoil";
 import { userState } from "../../recoil/atoms";
 import * as AntIcons from "react-icons/ai";

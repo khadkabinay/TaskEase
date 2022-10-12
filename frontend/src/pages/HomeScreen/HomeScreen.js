@@ -18,7 +18,6 @@ const HomeScreen = () => {
             </h5>
           </div>
         </div>
-        {/* <h1>&nbsp;Welcome To TaskEase</h1> */}
         <Footer />
       </div>
     </>

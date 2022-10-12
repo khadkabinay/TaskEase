@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import { userState } from "../../recoil/atoms";
-import { Link } from "react-router-dom";
 import UserModel from "../../models/UserModel";
 import Profile from "../../components/Profile/Profile";
 import PieChart from "../../components/PieChart/PieChart";

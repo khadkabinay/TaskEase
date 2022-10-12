@@ -9,7 +9,7 @@ const bodyParser = require("body-parser");
 const routes = require("./routes");
 
 // PORT
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 5000;
 const app = express();
 
 //Middleware
@@ -24,7 +24,7 @@ app.use("/tasks", routes.task);
 app.use("/auth", routes.auth);
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "/frontend/build")));
+  app.use(express.static(path.join(__dirname, "../frontend/build")));
   app.get("*", (req, res) =>
     res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"))
   );
